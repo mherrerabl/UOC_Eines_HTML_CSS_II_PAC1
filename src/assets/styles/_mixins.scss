@@ -1,0 +1,17 @@
+@mixin text($font: $font-family--text, $size: 1.8rem, $color: $color-text-black) {
+    font-family: $font;
+    font-size: $size;
+    color: $color;
+    font-weight: 300;
+}
+
+@mixin links-hover($color: $color-third, $weight: 600, $underline: none) {
+    color: $color;
+    font-weight: $weight;
+    text-decoration: $underline;
+}
+
+@mixin btn-hover($color: $color-text-white, $background: $color-third) {
+    color: $color;
+    background-color: $background;
+}

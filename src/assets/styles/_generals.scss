@@ -1,0 +1,144 @@
+/*REiniciar*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+}
+  
+body {
+    margin: 0 auto;
+}
+
+ul {
+    list-style: none;
+}
+
+/*COLORES DE FONDO*/
+.background--color-primary {
+    background-color: $color-primary;
+}
+
+.background--color-secundary {
+    background-color: $color-secundary;
+}
+
+/** TEXTO */
+.title--level-primary {
+    @include text($font: $font-family--title-primary, $size: 4.6rem, $color: $color-text-white);
+}
+
+.title--level-secundary {
+    @include text($font: $font-family--title-primary, $size: 3.2rem, $color: $color-text-black);
+}
+
+.title--level-third {
+    @include text($font: $font-family--title-primary, $size: 2.8rem, $color: $color-text-black);
+}
+
+p, li, a, label, .router-link {
+    @include text;
+}
+
+/**MARGENES*/
+%center-main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.center-content {
+    @extend %center-main-content;
+}
+
+.center-content--padding-50 {
+    @extend %center-main-content;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+//Centrar cualquier contenido
+%center-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/** Navegación */
+.nav-primary {
+    display: flex;
+    padding-left: 30px;
+}
+
+.nav-primary li {
+    height: 50px;
+    text-align: center;
+}
+
+.nav-primary .router-link {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+}
+
+.router-link:hover {
+    @include btn-hover;
+}
+
+/*links*/
+.links {
+    text-decoration: underline $color-primary;
+    cursor: pointer;
+}
+
+.link:hover {
+    @include links-hover($color: $color-third, $weight: 600, $underline: none)
+}
+
+/**breadcrumbs*/
+.breadcrumbs {
+    display: flex;
+}
+
+.breadcrumbs-links {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.breadcrumbs-separator {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.breadcrumbs-links--current-page{
+    font-weight: 700;
+    color: $color-third;
+}
+
+.breadcrumbs-links:hover {
+    @include links-hover;
+}
+
+/*cards*/
+.card-container {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    gap: 25px;
+}
+
+.card-container {
+    img {
+       max-width: 100%; 
+    }
+}
+
+.card {
+    cursor: pointer;
+}

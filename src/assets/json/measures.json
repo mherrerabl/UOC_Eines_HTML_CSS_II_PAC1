@@ -1,0 +1,75 @@
+[
+    {
+        "id": 1,
+        "longName": {
+            "singular": "taza",
+            "plural": "tazas"
+        },
+        "abbreviation": "tz"
+    },
+    {
+        "id": 2,
+        "longName": {
+            "singular": "tacita",
+            "plural": "tacitas"
+        },
+        "abbreviation": "tz de café"
+    },
+    {
+        "id": 3,
+        "longName": {
+            "singular": "cucharada sopera",
+            "plural": "cucharadas soperas"
+        },
+        "abbreviation": "c.s"
+    },
+    {
+        "id": 4,
+        "longName": {
+            "singular": "cucharada colmada",
+            "plural": "cucharadas colmadas"
+        },
+        "abbreviation": "c.s colmada"
+    },
+    {
+        "id": 5,
+        "longName": {
+            "singular": "cucharadita de café",
+            "plural": "cucharaditas de café"
+        },
+        "abbreviation": "c.c"
+    },
+    {
+        "id": 6,
+        "longName": {
+            "singular": "litro",
+            "plural": "litros"
+        },
+        "abbreviation": "l"
+    },
+    {
+        "id": 7,
+        "longName": {
+            "singular": "mililitro",
+            "plural": "mililitros"
+        },
+        "abbreviation": "ml"
+    },
+    {
+        "id": 8,
+        "longName": {
+            "singular": "kilogramo",
+            "plural": "kilogramos"
+        },
+        "abbreviation": "kg"
+    },
+    {
+        "id": 9,
+        "longName": {
+            "singular": "gramo",
+            "plural": "gramos"
+        },
+        "abbreviation": "g"
+    }
+
+]

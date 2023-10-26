@@ -1,0 +1,18 @@
+@use 'sass:color';
+
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Patrick+Hand+SC&display=swap');
+
+$font-family--title-primary: 'Patrick Hand SC', cursive;
+$font-family--title-secundary: '';
+$font-family--text: 'Handlee', cursive;
+
+$color-primary: #9AC635;
+$color-secundary: #DBE338;
+$color-third: #05260A;
+$color-text-black: #000;
+$color-text-white: #FFF;
+
+$uoc-bg: color.scale($color-secundary, $lightness: 70%);
+
+$mobileWidth: 420px;
+$tabletWidth: 768px

@@ -1,0 +1,589 @@
+[
+    {
+        "id": 1,
+        "name": "Croquetas de pollo asado",
+        "menu": 3,
+        "diners": 4,
+        "elaboration_time": "60 minutos",
+        "category": [2],
+        "publication_date": "25/10/2023",
+        "ingredients": [
+            {
+                "ingredient": "pollo asado",
+                "quantity": 400,
+                "measure": 7
+            },
+            {
+                "ingredient": "cebolla pequeña",
+                "quantity": 1,
+                "measure": 3
+            },
+            {
+                "ingredient": "leche templada",
+                "quantity": 2,
+                "measure": 1
+            },
+            {
+                "ingredient": "sal",
+                "quantity": 1,
+                "measure": 5
+            },
+            {
+                "ingredient": "nuez moscada",
+                "quantity": 1,
+                "measure": 5
+            },
+            {
+                "ingredient": "mantequilla",
+                "quantity": 1,
+                "measure": 3
+            },
+            {
+                "ingredient": "harina",
+                "quantity": 3,
+                "measure": 1
+            },
+            {
+                "ingredient": "avecrem de pollo (media pastilla)",
+                "quantity": 5,
+                "measure": 9
+            }
+        ],
+        "description": [
+            "Desmenuzar el pollo.",
+            "Rayar la cebolla y sofreir a baja temperatura entre 5-10 miunutos. Hasta que este dorada.",
+            "Se agrega el pollo y se saltea un par de minutos para integrarlo con la cebolla.",
+            "Se añade la leche templada, la sal, la nuez moscada y el avecrem.",
+            "Por último, se agrega el mantequilla y cuando este desecha, la harina.",
+            "Mezclar hasta que se despegue del fondo de la sartén.",
+            "Dejar enfriar en un <i lang='en'>tupperware</i> y cuando se haya enfriado, poner papel film encima de la masa para evitar que se cree una corteza.",
+            "Dejar reposar en la nevera hasta que este completamente fría, unas 4 horas.",
+            "Transcurido ese tiempo, darles la forma deseada y empanarlas con harina, huevo y pan rallado.",
+            "Finalmente, freirlas en abundante aceita a alta temperatura."
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Conejo en salsa de almendras",
+        "menu": 3,
+        "diners": 4,
+        "elaboration_time": "60 minutos",
+        "category": [2],
+        "publication_date": "05/05/2023",
+        "ingredients": [
+            {
+                "ingredient": "conejo",
+                "quantity": 1,
+                "measure": 0
+            },
+            {
+                "ingredient": "almendras",
+                "quantity": 50,
+                "measure": 9
+            },
+            {
+                "ingredient": "ajos",
+                "quantity": 6,
+                "measure": 0
+            },
+            {
+                "ingredient": "rebanadas de pan",
+                "quantity": 3,
+                "measure": 1
+            },
+            {
+                "ingredient": "aceite de oliva",
+                "quantity": 200,
+                "measure": 7
+            },
+            {
+                "ingredient": "agua",
+                "quantity": 200,
+                "measure": 7
+            }
+        ],
+        "description": [
+            "Verter el aceite en una sartén y a fuego medio freir los ajos enteros para luego reitrarlos.",
+            "Repetir el proceso con el pan y luego con las almendras.",
+            "Retirar la piel de los ajos y verterlos en el minipimer junto el pan, las almendras, el agua y una pizca de sal.",
+            "Salpimentar el conejo y freirlo. Puede tardar una media hora aproximadamente.",
+            "Si hay exceso de aceite, retirarlo",
+            "Verter la salsa que debe cubrir el conejo. Si falta, hechar agua.",
+            "Dejar que hierva durante unos 10 minutos y rectificar de sal."
+    
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Albóndigas en salsa",
+        "menu": 3,
+        "diners": 6,
+        "elaboration_time": "60 minutos",
+        "category": [2],
+        "publication_date": "17/02/2022",
+        "ingredients": [
+            {
+                "ingredient": "carne picada de cerdo",
+                "quantity": 250,
+                "measure": 9
+            },
+            {
+                "ingredient": "carne picada de ternera",
+                "quantity": 250,
+                "measure": 9
+            },
+            {
+                "ingredient": "pan rallado",
+                "quantity": 2,
+                "measure": 3
+            },
+            {
+                "ingredient": "huevo",
+                "quantity": 1,
+                "measure": 0
+            },
+            {
+                "ingredient": "ajos",
+                "quantity": 2,
+                "measure": 0
+            },
+            {
+                "ingredient": "perejil",
+                "quantity": 2,
+                "measure": 4
+            },
+            {
+                "ingredient": "leche",
+                "quantity": 0.5,
+                "measure": 2
+            },
+            {
+                "ingredient": "cebolla pequeña",
+                "quantity": 1,
+                "measure": 0
+            },
+            {
+                "ingredient": "tomate triturado",
+                "quantity": 3,
+                "measure": 3
+            },
+            {
+                "ingredient": "caldo de carne",
+                "quantity": 1,
+                "measure": 6
+            },
+            {
+                "ingredient": "ramita de tomillo",
+                "quantity": 1,
+                "measure": 0
+            },
+            {
+                "ingredient": "harina",
+                "quantity": 3,
+                "measure": 4
+            },
+            {
+                "ingredient": "aceite de oliva",
+                "quantity": 1,
+                "measure": 1
+            },
+            {
+                "ingredient": "almendras",
+                "quantity": 8,
+                "measure": 0
+            },
+            {
+                "ingredient": "rebanada de pan tostado",
+                "quantity": 1,
+                "measure": 0
+            }
+        ],
+        "description": [
+            "Mezclar las dos carnes picadas junto con el pan rallado, el huevo, la leche, un ajo y un poco de perejil, los dos bien picados, sal y pimienta. Dejar reposar 15 minutos.",
+            "Darle forma a las albóndigas, harinar y freir en una sartén con el aceite descrito.",
+            "A continuación, colar parte del aceite en una olla o sartén para hacer la salsa. No es necesario todo el aceite, solo para cubrir.",
+            "Pochar la cebolla durante 5-10 minutos a fuego bajo.",
+            "Verter el tomate y freir durante 5 minutos.",
+            "Agregar el caldo y la ramita de tomillo. Dejar hervir unos 5 minutos.",
+            "Añadir las albóndigas y dejar hervir unos 10 minutos.",
+            "De mientras hacer una picada en un mortero, con un ajo pequeño, una cucharada de perejil, las almendras y el pan tostado.",
+            "Después añadir en la picada un poco del la salsa que se está haciendo. Añadir la mezcla en la olla de las albóndigas.",
+            "Si la salsa no espesa añadir una cucharada de harina en un vaso junto tres desdos de agua.",
+            "Finalmente, rectificar de sal y pimienta."
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Arroz negro",
+        "menu": 2,
+        "diners": 4,
+        "elaboration_time": "60 minutos",
+        "category": [2],
+        "publication_date": "30/08/2023",
+        "ingredients": [
+            {
+                "ingredient": "arroz",
+                "quantity": 5,
+                "measure": 5
+            },
+            {
+                "ingredient": "caldo de pescado/fumet o caldo de roca",
+                "quantity": 1.5,
+                "measure": 6
+            },
+            {
+                "ingredient": "gambas",
+                "quantity": 8,
+                "measure": 0
+            },
+            {
+                "ingredient": "sepia",
+                "quantity": 500,
+                "measure": 9
+            },
+            {
+                "ingredient": "almeja (opcional)",
+                "quantity": 500,
+                "measure": 9
+            },
+            {
+                "ingredient": "tinta de sépia o calamar",
+                "quantity": 6,
+                "measure": 9
+            },
+            {
+                "ingredient": "pimiento verde italiano",
+                "quantity": 1,
+                "measure": 0
+            },
+            {
+                "ingredient": "pimiento rojo italiano",
+                "quantity": 1,
+                "measure": 0
+            },
+            {
+                "ingredient": "cebolla pequeña",
+                "quantity": 1,
+                "measure": 0
+            },
+            {
+                "ingredient": "tomate triturado",
+                "quantity": 4,
+                "measure": 3
+            },
+            {
+                "ingredient": "pimentón de la vera o dulce",
+                "quantity": 1,
+                "measure": 5
+            }
+        ],
+        "description": [
+            "Cortar los pimientos en cuadritos pequeños, de medio centímetro.",
+            "Rallar la cebolla.",
+            "Cortar la sepia en cuadritos de un centímetro.",
+            "Pelar las gambas.",
+            "Una vez cortado todos los ingredientes, se hace el sofrito. Se frien las cabezas de las gambas para sacar todo el jugo y se retiran.",
+            "Añadir la cebolla y los pimientos. Sofreir a fuego bajo unos 5-10 minutos.",
+            "Añadir la sepia y las gambas. Cuando esten hechas, agregar el pimentón y el tomate triturado. Sofreir unos 5 mintuos.",
+            "Agregar el caldo. Cuando hierva, verter la tinta.",
+            "Después de 5 minutos añadir el arroz.",
+            "Seguir el tiempo de cocción de la marca.",
+            "Añadir las almejas 10 minutos antes de finalizar la cocción."
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Berenjenas rellenas",
+        "menu": 3,
+        "diners": 4,
+        "elaboration_time": "45 minutos",
+        "category": [1],
+        "publication_date": "04/06/2022",
+        "ingredients": [
+            {
+                "ingredient": "berenjenas",
+                "quantity": 2,
+                "measure": 0
+            },
+            {
+                "ingredient": "carne picada",
+                "quantity": 200,
+                "measure": 9
+            },
+            {
+                "ingredient": "leche",
+                "quantity": 250,
+                "measure": 7
+            },
+            {
+                "ingredient": "cebolla",
+                "quantity": 0.5,
+                "measure": 0
+            },
+            {
+                "ingredient": "harina",
+                "quantity": 3,
+                "measure": 4
+            },
+            {
+                "ingredient": "queso de fundir",
+                "quantity": 100,
+                "measure": 9
+            }
+        ],
+        "description": [
+            "Precalentar el horno a 180º",
+            "Quitar el tallo de las berenjenas, partir por la mitad y vaciarlas dejando 1cm de grosor.",
+            "Colocar las berenjenas, salpimentadas, en una bandeja y hornear durante unos 15 minutos.",
+            "Cortar en cuadritos de medio centímetro la parte que hemos sacado de la berenjena.",
+            "En una sartén, sofreir la cebolla.",
+            "Después, agregar la carne picada salpimentada junto con los daditos de la berenjena. Cocinar durante unos 10 minutos.",
+            "A continuación, añadir la harina y cocinar hasta que ya no este cruda y añadir la leche. Agregar sal y pimienta.",
+            "Mezclar durante 5-10 minutos.",
+            "Rellenar las berenjenas y poner el queso por encima.",
+            "Finalmente, gratinar las berenjenas en el horno."
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Porra con boquerones",
+        "menu": 3,
+        "diners": 4,
+        "elaboration_time": "45 minutos",
+        "category": [2],
+        "publication_date": "16/07/2023",
+        "ingredients": [
+            {
+                "ingredient": "boquerón",
+                "quantity": 0.5,
+                "measure": 8
+            },
+            {
+                "ingredient": "harina",
+                "quantity": 7,
+                "measure": 4
+            },
+            {
+                "ingredient": "agua",
+                "quantity": 1.5,
+                "measure": 6
+            },
+            {
+                "ingredient": "sal",
+                "quantity": 1.5,
+                "measure": 5
+            },
+            {
+                "ingredient": "vinagre",
+                "quantity": 4,
+                "measure": 3
+            },
+            {
+                "ingredient": "ajo",
+                "quantity": 1,
+                "measure": 0
+            },
+            {
+                "ingredient": "cebolla pequeña",
+                "quantity": 1,
+                "measure": 0
+            },
+            {
+                "ingredient": "comino",
+                "quantity": 1,
+                "measure": 5
+            },
+            {
+                "ingredient": "tomate triturado",
+                "quantity": 2,
+                "measure": 3
+            },
+            {
+                "ingredient": "hoja de laurel",
+                "quantity": 1,
+                "measure": 0
+            },
+            {
+                "ingredient": "colorante",
+                "quantity": 0,
+                "measure": 0
+            }
+        ],
+        "description": [
+            "Los boquerones deben estar limpios, sin la cabeza y partidos por la mitad.",
+            "Salar los boquerones, harinarlos y freirlos.",
+            "En el mortero machacar el ajo con una pizca de sal. Luego añadir el comino y el vinagre.",
+            "En la sartén que se han frito los boquerones, con 4 cucharadas de aceite, pochar la cebolla.", 
+            "A continuación, verter el tomate triturado y cocinas unos 5 minutos.",
+            "Añadir el agua, la sal, la harina tamizada y cocinar a fuego medio fuerte (7-8)",
+            "Cuando empieze a hervir, agregar una pizca de colorante, el laurel y pimienta al gusto.",
+            "Mezclar hasta que la salsa espese y, finalmente, agregar los boquerones fritos."
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Fideos con pollo",
+        "menu": 3,
+        "diners": 4,
+        "elaboration_time": "40 minutos",
+        "category": [2],
+        "publication_date": "08/09/2023",
+        "ingredients": [
+            {
+                "ingredient": "pechuga de pollo",
+                "quantity": 1,
+                "measure": 0
+            },
+            {
+                "ingredient": "muslo de pollo",
+                "quantity": 1,
+                "measure": 0
+            },
+            {
+                "ingredient": "cebolla pequeña",
+                "quantity": 1,
+                "measure": 0
+            },
+            {
+                "ingredient": "tomate triturado",
+                "quantity": 4,
+                "measure": 3
+            },
+            {
+                "ingredient": "pimiento rojo o verde",
+                "quantity": 1,
+                "measure": 0
+            },
+            {
+                "ingredient": "hoja de laurel",
+                "quantity": 1,
+                "measure": 0
+            }, 
+            {
+                "ingredient": "caldo de pollo",
+                "quantity": 1,
+                "measure": 6
+            },
+            {
+                "ingredient": "fideos del nº4",
+                "quantity": 200,
+                "measure": 9
+            },
+            {
+                "ingredient": "patatas medianas",
+                "quantity": 2,
+                "measure": 0
+            }
+        ],
+        "description": [
+            "Con la pechuga y el muslo de pollo, deshuesado y sin piel, lo cortamos en cuadritos de 2cm y salmpimentas.",
+            "Rallar la cebolla y cortar el pimiento en cuatro partes (trozos grandes para retirar con facilidad).",
+            "En una olla sofreir la cebolla hasta que esté bien pochada y agregar el pimiento.",
+            "Después de 5 minutos añadir el pollo y freir hasta que este dorado.",
+            "Agregar el tomate y sofreir 5-10 minutos.",
+            "Verter el caldo y la hoja de laurel.",
+            "Dejar cocer unos 20 minutos.",
+            "De mientras, pelar, cortar y salar las patatas del mismo tamaño que el pollo.",
+            "Añadir los patatas y 5 minutos después los fideos.",
+            "Finalmente, cocinar unos 15-20 minutos y rectificamos de sal y pimienta."
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Pestiños",
+        "menu": 4,
+        "diners": 2,
+        "elaboration_time": "",
+        "category": [2],
+        "publication_date": "09/10/2023",
+        "ingredients": [
+            {
+                "ingredient": "",
+                "quantity": 0,
+                "measure": 1
+            }
+        ],
+        "description": [
+            ""
+        ]
+    },
+    
+    {
+        "id": 9,
+        "name": "Pizza en la sartén",
+        "menu": 3,
+        "diners": 2,
+        "elaboration_time": "30 minutos",
+        "category": [4],
+        "publication_date": "10/10/2023",
+        "ingredients": [
+            {
+                "ingredient": "harina",
+                "quantity": 6,
+                "measure": 4
+            },
+            {
+                "ingredient": "cerveza",
+                "quantity": 1,
+                "measure": 2
+            },
+            {
+                "ingredient": "aceite de oliva",
+                "quantity": 0.5,
+                "measure": 2
+            },
+            {
+                "ingredient": "sal",
+                "quantity": 1,
+                "measure": 5
+            },
+            {
+                "ingredient": "tomate frito",
+                "quantity": 2,
+                "measure": 3
+            },
+            {
+                "ingredient": "orégano",
+                "quantity": 1,
+                "measure": 3
+            },
+            {
+                "ingredient": "mozarrella",
+                "quantity": 100,
+                "measure": 9
+            }
+        ],
+        "description": [
+            "En un bol mezclamos la harina, la sal, el aceite y la cerveza.",
+            "Amasar hasta conseguir una masa homogénea.",
+            "En una sartén antiaderente, echar aceite y esparzir con un pinzel o una servilleta. No queremos aceite en exceso.",
+            "Espolvorear un poco de harina en la sartén (para que no se pegue).",
+            "Esparcir la masa en la sartén, poner a fuego medio alto (6-7) y tapar con una tapadera sin rejillas (queremos conseguir un efecto horno en el interior).",
+            "Después de 5 minutos revisar si la base ya está hecha. Si es así, dar la vuelta a la pizza y bajar el fuego a 5.",
+            "Añadir a la base el tomate, el orégano y la mozzarella. Se puede añadir cualquier otro ingrediente.",
+            "Por último, tapar y esperar de 5 a 10 minutos que la pizza este totalmente hecha."
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Porras",
+        "menu": 3,
+        "diners": 4,
+        "elaboration_time": "",
+        "category": [2],
+    "publication_date": "09/01/2023",
+        "ingredients": [
+            {
+                "ingredient": "",
+                "quantity": 0,
+                "measure": 1
+            }
+        ],
+        "description": [
+            ""
+        ]
+    }
+]
+
+
+

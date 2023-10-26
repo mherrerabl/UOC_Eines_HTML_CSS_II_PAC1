@@ -1,0 +1,29 @@
+.uoc-footer {
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 50px;
+
+  @media (min-width: $tabletWidth) {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.main-content > main {
+  @media (min-width: $tabletWidth) {
+    margin-left: 25px;
+  }
+}
+
+.main-content > aside {
+  @media (min-width: $tabletWidth) {
+    margin-right: 25px;
+  }
+}
+
+
