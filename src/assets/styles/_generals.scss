@@ -1,17 +1,21 @@
-/*REiniciar*/
+/*Reiniciar*/
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-size: 10px;
 }
-  
+
 body {
     margin: 0 auto;
 }
 
 ul {
     list-style: none;
+}
+
+a {
+    text-decoration: none;
 }
 
 /*COLORES DE FONDO*/
@@ -29,15 +33,28 @@ ul {
 }
 
 .title--level-secundary {
-    @include text($font: $font-family--title-primary, $size: 3.2rem, $color: $color-text-black);
+    @include text($font: $font-family--title-primary, $size: 3.2rem);
 }
 
 .title--level-third {
-    @include text($font: $font-family--title-primary, $size: 2.8rem, $color: $color-text-black);
+    @include text($font: $font-family--title-primary, $size: 2.8rem);
 }
 
-p, li, a, label, .router-link {
+.title--level-fourth {
+    @include text($font: $font-family--title-primary, $size: 2.4rem);
+}
+
+p,
+li,
+a:not(.logo-link),
+label,
+.foreignWords {
     @include text;
+}
+
+.nav-primary>li,
+.router-link {
+    @include text($marginBottom: 0);
 }
 
 /**MARGENES*/
@@ -50,46 +67,23 @@ p, li, a, label, .router-link {
     @extend %center-main-content;
 }
 
-.center-content--padding-50 {
+.center-content--padding-25-50 {
     @extend %center-main-content;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding: 25px 50px;
+
+}
+
+.center-content--padding-0 {
+    @extend %center-main-content;
+    padding: 0px;
 }
 
 //Centrar cualquier contenido
-%center-content {
+%center-content-vertical-hortizontal {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/** Navegación */
-.nav-primary {
-    display: flex;
-    padding-left: 30px;
-}
-
-.nav-primary li {
-    height: 50px;
-    text-align: center;
-}
-
-.nav-primary .router-link {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding-left: 15px;
-    padding-right: 15px;
-    cursor: pointer;
-}
-
-.router-link:hover {
-    @include btn-hover;
+    transform: translate(-50.2%, -50%);
 }
 
 /*links*/
@@ -102,43 +96,218 @@ p, li, a, label, .router-link {
     @include links-hover($color: $color-third, $weight: 600, $underline: none)
 }
 
-/**breadcrumbs*/
-.breadcrumbs {
+/*btn*/
+.btn-primary {
+    @include btn;
+    width: 50px;
+    height: 25px;
+}
+
+/** Navegación */
+.nav-primary {
     display: flex;
-}
+    justify-content: center;
 
-.breadcrumbs-links {
-    text-decoration: none;
-    cursor: pointer;
-}
+    li {
+        height: 50px;
+    }
 
-.breadcrumbs-separator {
-    margin-left: 10px;
-    margin-right: 10px;
-}
+    .router-link {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 
-.breadcrumbs-links--current-page{
-    font-weight: 700;
-    color: $color-third;
-}
+    .router-link-active {
+        @include btn-hover-active;
+        cursor: default;
+    }
 
-.breadcrumbs-links:hover {
-    @include links-hover;
-}
-
-/*cards*/
-.card-container {
-    display: grid;
-    grid-template-columns: 30% 30% 30%;
-    gap: 25px;
-}
-
-.card-container {
-    img {
-       max-width: 100%; 
+    .router-link:hover {
+        @include btn-hover-active;
     }
 }
 
+
+
+/**breadcrumbs*/
+.breadcrumbs {
+    display: flex;
+
+    .breadcrumbs-separator {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    li:last-child .breadcrumbs-separator {
+        display: none;
+    }
+
+    .router-link-active {
+        @include link-hover-active;
+        cursor: default;
+    }
+
+    .breadcrumbs-links:hover {
+        @include link-hover-active;
+    }
+}
+
+/*cards*/
+.wrapper-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+
+    @media (min-width: $mobileWidth) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: $tabletWidth) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+
+}
+
 .card {
-    cursor: pointer;
+    position: relative;
+    display: flex;
+
+    .card__wrapper-title {
+        position: absolute;
+        bottom: 0;
+        background-image: linear-gradient($color-transparent, $color-disable);
+        width: 100%;
+        height: 100%;
+    }
+
+    .title--level-third {
+        margin: 0;
+        padding: 15px;
+        position: absolute;
+        bottom: 0;
+        height: auto;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.card:hover {
+    transform: scale(1.05, 1.05);
+    transition: transform 0.3s ease-out;
+
+    .card__wrapper-title {
+        animation: translatecard__wrapper-title 0.2s ease-out;
+        animation-fill-mode: forwards;
+    }
+
+    .title--level-third {
+        animation: translateCard__title 0.15s ease-out;
+        animation-fill-mode: forwards;
+    }
+}
+
+.card:focus {
+    animation: translateCard__state-focus 0.2s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes translatecard__wrapper-title {
+    0% {
+        height: 100%;
+    }
+
+    50% {
+        height: 100%;
+    }
+
+    100% {
+        height: 0;
+        display: none;
+    }
+}
+
+@keyframes translateCard__title {
+    0% {
+        visibility: visible;
+    }
+
+    100% {
+        visibility: hidden;
+    }
+}
+
+@keyframes translateCard__state-focus {
+    0% {
+        transform: scale(1.05, 1.05);
+    }
+
+    50% {
+        transform: scale(0.8, 0.8);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+
+/*searcher*/
+.searcher {
+    display: flex;
+    margin: auto 0;
+    position: relative;
+    max-width: 350px;
+    width: 100%;
+    grid-column-end: 3;
+
+    &__label {
+        display: block;
+        position: absolute;
+        top: 0;
+        line-height: 30px;
+        color: $color-disable;
+        left: 5px;
+        padding: 0 5px;
+        transition: line-height 200ms ease-in-out,
+            font-size 200ms ease-in-out,
+            top 200ms ease-in-out;
+        pointer-events: none;
+    }
+
+    &__input {
+        width: 100%;
+        height: 30px;
+        border: 1px solid $color-disable;
+        border-radius: 3px;
+        padding: 0 10px;
+
+        &:not(:placeholder-shown),
+        &:focus {
+            +label {
+                background-color: $color-text-white;
+                line-height: 10px;
+                opacity: 1;
+                font-size: 10px;
+                top: -5px;
+            }
+        }
+
+        &:focus {
+            outline: none;
+            border: 2px solid $color-primary;
+
+            +label {
+                color: $color-primary;
+            }
+        }
+    }
 }

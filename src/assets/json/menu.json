@@ -1,18 +1,18 @@
 [
     {
         "id": 1,
-        "name": "Entrantes"
+        "name": "entrantes"
     },
     {
         "id": 2,
-        "name": "Primeros"
+        "name": "primeros"
     },
     {
         "id": 3,
-        "name": "Segundos"
+        "name": "segundos"
     },
     {
         "id": 4,
-        "name": "Postres"
+        "name": "postres"
     }
 ]

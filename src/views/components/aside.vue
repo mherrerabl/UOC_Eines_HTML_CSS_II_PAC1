@@ -3,89 +3,45 @@
         <h2 class="title--level-secundary">Nuevas recetas</h2>
 
         <swiper :slides-per-view="1" :pagination="true" navigation v-if="smallScreens">
-            <swiper-slide v-for="(recipe, key) in sortRecipes.slice(0,4)" :key="recipe.id">
-                <router-link to="/">
-                    <h3 class="title--level-third">{{ recipe.name }}</h3>
-                    <picture :class="'recipe-'+key+'-img'">
-                        <source srcset="./../../assets/images/logo.png?as=webp&width=150" type="image/webp">
-                        <img src="./../../assets/images/logo.png?width=150" alt="">
-                    </picture>
-                </router-link>
+            <swiper-slide v-for="(recipe) in recipes.slice(0,4)" :key="recipe.id">
+                <card :recipe="recipe"/>
             </swiper-slide>
         </swiper>
         
         <ul v-else>
-            <li v-for="(recipe, key) in sortRecipes.slice(0,4)" :key="recipe.id">
-                <router-link to="/">
-                    <h3 class="title--level-third">{{ recipe.name }}</h3>
-                    <picture :class="'recipe-'+key+'-img'">
-                        <source srcset="./../../assets/images/logo.png?as=webp&width=150" type="image/webp">
-                        <img src="./../../assets/images/logo.png?width=150" alt="">
-                    </picture>
-                </router-link>
+            <li v-for="(recipe) in recipes.slice(0,4)" :key="recipe.id">
+                <card :recipe="recipe"></card>
             </li>
         </ul>
     </div>
 </template>
 
 <script>
-    import recipesJson from "./../../assets/json/recipes.json";
-   
-    /**swiper */
-    import SwiperCore, { Navigation, Pagination, A11y } from "swiper";
-    import { Swiper, SwiperSlide } from "swiper/vue";
+//Components
+import Card from './card';
 
-    // Import Swiper styles
-    import "swiper/swiper.scss";
-    import "swiper/components/navigation/navigation.scss";
-    import "swiper/components/pagination/pagination.scss";
+//SwiperJS
+import SwiperCore, { A11y, Navigation, Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/vue';
 
-    
-    
+//Swiper styles
+import 'swiper/components/navigation/navigation.scss';
+import 'swiper/components/pagination/pagination.scss';
+import 'swiper/swiper.scss';
 
-    export default {
-        components: { Swiper, SwiperSlide },
-        data() {
-            return {
-                recipes: recipesJson
-            }
-        }, 
-        setup() {
-            let smallScreens = (window.screen.width > 768) ? false : true;
-            
-            //Install Swiper components
-            SwiperCore.use([Navigation, Pagination, A11y]);
+//Functions
+import { sortRecipes } from "./../../assets/scripts/functions";
 
-            let docWidth = document.documentElement.offsetWidth;
+export default {
+    components: { Swiper, SwiperSlide, Card },
+    setup() {            
+        //Install Swiper components
+        SwiperCore.use([Navigation, Pagination, A11y]);
 
-                [].forEach.call(
-                document.querySelectorAll('*'),
-                function(el) {
-                    if (el.offsetWidth > docWidth) {
-                    console.log(el);
-                    }
-                }
-                );
-            return { smallScreens, docWidth }
-        },
-        computed: {
-            sortRecipes() {
-                return this.recipes.sort((a,b) => {
-                   let dateB = `${b.publication_date.slice(3,5)}/${b.publication_date.slice(0,2)}/${b.publication_date.slice(6,10)}`;
-                   let dateA = `${a.publication_date.slice(3,5)}/${a.publication_date.slice(0,2)}/${a.publication_date.slice(6,10)}`;
-                    return new Date(dateB).getTime() - new Date(dateA).getTime();
-                });
-            }
-        },
+        let recipes = sortRecipes();
+        let smallScreens = (window.screen.width > 850) ? false : true;
 
-  methods: {
-    onSwiper(swiper) {
-      // console.log(swiper)
-    },
-    onSlideChange() {
-      // console.log('slide change')
-    },
-  },
+        return { recipes, smallScreens }
     }
-
+}
 </script>

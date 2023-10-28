@@ -1,22 +1,27 @@
 [
     {
         "id": 1,
-        "name": "mediterranea"
+        "name": "Mediterránea",
+        "color": "#26F5F2"
     },
     {
         "id": 2,
-        "name": "española"
+        "name": "Española",
+        "color": "#FFF700"
     },
     {
         "id": 3,
-        "name": "japonesa"
+        "name": "Japonesa",
+        "color": "#8F00FF"
     },
     {
         "id": 4,
-        "name": "italiana"
+        "name": "Italiana",
+        "color": "#028B00"
     },
     {
         "id": 5,
-        "name": "china"
+        "name": "China",
+        "color": "#FF0000"
     }
 ]

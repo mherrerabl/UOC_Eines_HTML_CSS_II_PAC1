@@ -14,18 +14,33 @@
 
 .card-menu {
     div {
-        @extend %center-content;
+        @extend %center-content-vertical-hortizontal;
         width: 100%;
         height: 75px;
         background-color: $color-primary;
+        background: linear-gradient(to left, $color-primary 50%, $color-secundary 50%) right;
+        background-size: 200%;
+        transition: 0.2s ease-out;
     }
 
     .title--level-third {
-        @extend %center-content;
+        @extend %center-content-vertical-hortizontal;
+        color: $color-text-white;
     }
 
     img {
         width: 100%;
         height: 100%;
+    }
+}
+
+.card-menu:hover { 
+    div {
+        background-position: left;
+        height: 150px;
+    }
+
+    .title--level-third {
+        color: $color-text-black;
     }
 }

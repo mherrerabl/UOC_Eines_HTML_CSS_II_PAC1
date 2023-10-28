@@ -5,46 +5,50 @@
         "menu": 3,
         "diners": 4,
         "elaboration_time": "60 minutos",
-        "category": [2],
+        "category": 2,
         "publication_date": "25/10/2023",
-        "ingredients": [
+        "img": {
+            "url": "img_1.png",
+            "alt": "Imagen de croquetas de pollo asado"
+        },
+        "ingredients":  [
             {
-                "ingredient": "pollo asado",
+                "name": "pollo asado",
                 "quantity": 400,
-                "measure": 7
+                "measure": 9
             },
             {
-                "ingredient": "cebolla pequeña",
+                "name": "cebolla pequeña",
                 "quantity": 1,
                 "measure": 3
             },
             {
-                "ingredient": "leche templada",
+                "name": "leche templada",
                 "quantity": 2,
                 "measure": 1
             },
             {
-                "ingredient": "sal",
+                "name": "sal",
                 "quantity": 1,
                 "measure": 5
             },
             {
-                "ingredient": "nuez moscada",
+                "name": "nuez moscada",
                 "quantity": 1,
                 "measure": 5
             },
             {
-                "ingredient": "mantequilla",
+                "name": "mantequilla",
                 "quantity": 1,
                 "measure": 3
             },
             {
-                "ingredient": "harina",
+                "name": "harina",
                 "quantity": 3,
                 "measure": 1
             },
             {
-                "ingredient": "avecrem de pollo (media pastilla)",
+                "name": "avecrem de pollo (media pastilla)",
                 "quantity": 5,
                 "measure": 9
             }
@@ -56,7 +60,7 @@
             "Se añade la leche templada, la sal, la nuez moscada y el avecrem.",
             "Por último, se agrega el mantequilla y cuando este desecha, la harina.",
             "Mezclar hasta que se despegue del fondo de la sartén.",
-            "Dejar enfriar en un <i lang='en'>tupperware</i> y cuando se haya enfriado, poner papel film encima de la masa para evitar que se cree una corteza.",
+            "Dejar enfriar en un <i lang='en' class='foreignWords'>tupperware</i> y cuando se haya enfriado, poner papel film encima de la masa para evitar que se cree una corteza.",
             "Dejar reposar en la nevera hasta que este completamente fría, unas 4 horas.",
             "Transcurido ese tiempo, darles la forma deseada y empanarlas con harina, huevo y pan rallado.",
             "Finalmente, freirlas en abundante aceita a alta temperatura."
@@ -68,36 +72,40 @@
         "menu": 3,
         "diners": 4,
         "elaboration_time": "60 minutos",
-        "category": [2],
+        "category": 2,
         "publication_date": "05/05/2023",
-        "ingredients": [
+        "img": {
+            "url": "img_2.png",
+            "alt": "Imagen de conejo en salsa de almendras"
+        },
+        "ingredients":  [
             {
-                "ingredient": "conejo",
+                "name": "conejo",
                 "quantity": 1,
                 "measure": 0
             },
             {
-                "ingredient": "almendras",
+                "name": "almendras",
                 "quantity": 50,
                 "measure": 9
             },
             {
-                "ingredient": "ajos",
+                "name": "ajos",
                 "quantity": 6,
                 "measure": 0
             },
             {
-                "ingredient": "rebanadas de pan",
+                "name": "rebanadas de pan",
                 "quantity": 3,
                 "measure": 1
             },
             {
-                "ingredient": "aceite de oliva",
+                "name": "aceite de oliva",
                 "quantity": 200,
                 "measure": 7
             },
             {
-                "ingredient": "agua",
+                "name": "agua",
                 "quantity": 200,
                 "measure": 7
             }
@@ -119,81 +127,85 @@
         "menu": 3,
         "diners": 6,
         "elaboration_time": "60 minutos",
-        "category": [2],
+        "category": 2,
         "publication_date": "17/02/2022",
-        "ingredients": [
+        "img": {
+            "url": "img_3.png",
+            "alt": "Imagen de albóndigas en salsa"
+        },
+        "ingredients":  [
             {
-                "ingredient": "carne picada de cerdo",
+                "name": "carne picada de cerdo",
                 "quantity": 250,
                 "measure": 9
             },
             {
-                "ingredient": "carne picada de ternera",
+                "name": "carne picada de ternera",
                 "quantity": 250,
                 "measure": 9
             },
             {
-                "ingredient": "pan rallado",
+                "name": "pan rallado",
                 "quantity": 2,
                 "measure": 3
             },
             {
-                "ingredient": "huevo",
+                "name": "huevo",
                 "quantity": 1,
                 "measure": 0
             },
             {
-                "ingredient": "ajos",
+                "name": "ajos",
                 "quantity": 2,
                 "measure": 0
             },
             {
-                "ingredient": "perejil",
+                "name": "perejil",
                 "quantity": 2,
                 "measure": 4
             },
             {
-                "ingredient": "leche",
+                "name": "leche",
                 "quantity": 0.5,
                 "measure": 2
             },
             {
-                "ingredient": "cebolla pequeña",
+                "name": "cebolla pequeña",
                 "quantity": 1,
                 "measure": 0
             },
             {
-                "ingredient": "tomate triturado",
+                "name": "tomate triturado",
                 "quantity": 3,
                 "measure": 3
             },
             {
-                "ingredient": "caldo de carne",
+                "name": "caldo de carne",
                 "quantity": 1,
                 "measure": 6
             },
             {
-                "ingredient": "ramita de tomillo",
+                "name": "ramita de tomillo",
                 "quantity": 1,
                 "measure": 0
             },
             {
-                "ingredient": "harina",
+                "name": "harina",
                 "quantity": 3,
                 "measure": 4
             },
             {
-                "ingredient": "aceite de oliva",
+                "name": "aceite de oliva",
                 "quantity": 1,
                 "measure": 1
             },
             {
-                "ingredient": "almendras",
+                "name": "almendras",
                 "quantity": 8,
                 "measure": 0
             },
             {
-                "ingredient": "rebanada de pan tostado",
+                "name": "rebanada de pan tostado",
                 "quantity": 1,
                 "measure": 0
             }
@@ -218,61 +230,65 @@
         "menu": 2,
         "diners": 4,
         "elaboration_time": "60 minutos",
-        "category": [2],
+        "category": 2,
         "publication_date": "30/08/2023",
-        "ingredients": [
+        "img": {
+            "url": "img_4.png",
+            "alt": "Imagen de arroz negro"
+        },
+        "ingredients":  [
             {
-                "ingredient": "arroz",
+                "name": "arroz",
                 "quantity": 5,
                 "measure": 5
             },
             {
-                "ingredient": "caldo de pescado/fumet o caldo de roca",
+                "name": "caldo de pescado/fumet o caldo de roca",
                 "quantity": 1.5,
                 "measure": 6
             },
             {
-                "ingredient": "gambas",
+                "name": "gambas",
                 "quantity": 8,
                 "measure": 0
             },
             {
-                "ingredient": "sepia",
+                "name": "sepia",
                 "quantity": 500,
                 "measure": 9
             },
             {
-                "ingredient": "almeja (opcional)",
+                "name": "almeja (opcional)",
                 "quantity": 500,
                 "measure": 9
             },
             {
-                "ingredient": "tinta de sépia o calamar",
+                "name": "tinta de sépia o calamar",
                 "quantity": 6,
                 "measure": 9
             },
             {
-                "ingredient": "pimiento verde italiano",
+                "name": "pimiento verde italiano",
                 "quantity": 1,
                 "measure": 0
             },
             {
-                "ingredient": "pimiento rojo italiano",
+                "name": "pimiento rojo italiano",
                 "quantity": 1,
                 "measure": 0
             },
             {
-                "ingredient": "cebolla pequeña",
+                "name": "cebolla pequeña",
                 "quantity": 1,
                 "measure": 0
             },
             {
-                "ingredient": "tomate triturado",
+                "name": "tomate triturado",
                 "quantity": 4,
                 "measure": 3
             },
             {
-                "ingredient": "pimentón de la vera o dulce",
+                "name": "pimentón de la vera o dulce",
                 "quantity": 1,
                 "measure": 5
             }
@@ -297,36 +313,40 @@
         "menu": 3,
         "diners": 4,
         "elaboration_time": "45 minutos",
-        "category": [1],
+        "category": 1,
         "publication_date": "04/06/2022",
-        "ingredients": [
+        "img": {
+            "url": "img_5.png",
+            "alt": "Imagen de berenjenas rellenas"
+        },
+        "ingredients":  [
             {
-                "ingredient": "berenjenas",
+                "name": "berenjenas",
                 "quantity": 2,
                 "measure": 0
             },
             {
-                "ingredient": "carne picada",
+                "name": "carne picada",
                 "quantity": 200,
                 "measure": 9
             },
             {
-                "ingredient": "leche",
+                "name": "leche",
                 "quantity": 250,
                 "measure": 7
             },
             {
-                "ingredient": "cebolla",
+                "name": "cebolla",
                 "quantity": 0.5,
                 "measure": 0
             },
             {
-                "ingredient": "harina",
+                "name": "harina",
                 "quantity": 3,
                 "measure": 4
             },
             {
-                "ingredient": "queso de fundir",
+                "name": "queso de fundir",
                 "quantity": 100,
                 "measure": 9
             }
@@ -350,61 +370,65 @@
         "menu": 3,
         "diners": 4,
         "elaboration_time": "45 minutos",
-        "category": [2],
+        "category": 2,
         "publication_date": "16/07/2023",
-        "ingredients": [
+        "img": {
+            "url": "img_6.png",
+            "alt": "Imagen de porra con boquerones"
+        },
+        "ingredients":  [
             {
-                "ingredient": "boquerón",
+                "name": "boquerón",
                 "quantity": 0.5,
                 "measure": 8
             },
             {
-                "ingredient": "harina",
+                "name": "harina",
                 "quantity": 7,
                 "measure": 4
             },
             {
-                "ingredient": "agua",
+                "name": "agua",
                 "quantity": 1.5,
                 "measure": 6
             },
             {
-                "ingredient": "sal",
+                "name": "sal",
                 "quantity": 1.5,
                 "measure": 5
             },
             {
-                "ingredient": "vinagre",
+                "name": "vinagre",
                 "quantity": 4,
                 "measure": 3
             },
             {
-                "ingredient": "ajo",
+                "name": "ajo",
                 "quantity": 1,
                 "measure": 0
             },
             {
-                "ingredient": "cebolla pequeña",
+                "name": "cebolla pequeña",
                 "quantity": 1,
                 "measure": 0
             },
             {
-                "ingredient": "comino",
+                "name": "comino",
                 "quantity": 1,
                 "measure": 5
             },
             {
-                "ingredient": "tomate triturado",
+                "name": "tomate triturado",
                 "quantity": 2,
                 "measure": 3
             },
             {
-                "ingredient": "hoja de laurel",
+                "name": "hoja de laurel",
                 "quantity": 1,
                 "measure": 0
             },
             {
-                "ingredient": "colorante",
+                "name": "colorante",
                 "quantity": 0,
                 "measure": 0
             }
@@ -426,51 +450,55 @@
         "menu": 3,
         "diners": 4,
         "elaboration_time": "40 minutos",
-        "category": [2],
+        "category": 2,
         "publication_date": "08/09/2023",
-        "ingredients": [
+        "img": {
+            "url": "img_7.png",
+            "alt": "Imagen de fideos con pollo"
+        },
+        "ingredients":  [
             {
-                "ingredient": "pechuga de pollo",
+                "name": "pechuga de pollo",
                 "quantity": 1,
                 "measure": 0
             },
             {
-                "ingredient": "muslo de pollo",
+                "name": "muslo de pollo",
                 "quantity": 1,
                 "measure": 0
             },
             {
-                "ingredient": "cebolla pequeña",
+                "name": "cebolla pequeña",
                 "quantity": 1,
                 "measure": 0
             },
             {
-                "ingredient": "tomate triturado",
+                "name": "tomate triturado",
                 "quantity": 4,
                 "measure": 3
             },
             {
-                "ingredient": "pimiento rojo o verde",
+                "name": "pimiento rojo o verde",
                 "quantity": 1,
                 "measure": 0
             },
             {
-                "ingredient": "hoja de laurel",
+                "name": "hoja de laurel",
                 "quantity": 1,
                 "measure": 0
             }, 
             {
-                "ingredient": "caldo de pollo",
+                "name": "caldo de pollo",
                 "quantity": 1,
                 "measure": 6
             },
             {
-                "ingredient": "fideos del nº4",
+                "name": "fideos del nº4",
                 "quantity": 200,
                 "measure": 9
             },
             {
-                "ingredient": "patatas medianas",
+                "name": "patatas medianas",
                 "quantity": 2,
                 "measure": 0
             }
@@ -494,11 +522,15 @@
         "menu": 4,
         "diners": 2,
         "elaboration_time": "",
-        "category": [2],
+        "category": 2,
         "publication_date": "09/10/2023",
-        "ingredients": [
+        "img": {
+            "url": "img_8.png",
+            "alt": "Imagen de pestiños"
+        },
+        "ingredients":  [
             {
-                "ingredient": "",
+                "name": "",
                 "quantity": 0,
                 "measure": 1
             }
@@ -514,41 +546,45 @@
         "menu": 3,
         "diners": 2,
         "elaboration_time": "30 minutos",
-        "category": [4],
+        "category": 4,
         "publication_date": "10/10/2023",
-        "ingredients": [
+        "img": {
+            "url": "img_9.png",
+            "alt": "Imagen de pizza en la sartén"
+        },
+        "ingredients":  [
             {
-                "ingredient": "harina",
+                "name": "harina",
                 "quantity": 6,
                 "measure": 4
             },
             {
-                "ingredient": "cerveza",
+                "name": "cerveza",
                 "quantity": 1,
                 "measure": 2
             },
             {
-                "ingredient": "aceite de oliva",
+                "name": "aceite de oliva",
                 "quantity": 0.5,
                 "measure": 2
             },
             {
-                "ingredient": "sal",
+                "name": "sal",
                 "quantity": 1,
                 "measure": 5
             },
             {
-                "ingredient": "tomate frito",
+                "name": "tomate frito",
                 "quantity": 2,
                 "measure": 3
             },
             {
-                "ingredient": "orégano",
+                "name": "orégano",
                 "quantity": 1,
                 "measure": 3
             },
             {
-                "ingredient": "mozarrella",
+                "name": "mozarrella",
                 "quantity": 100,
                 "measure": 9
             }
@@ -570,11 +606,15 @@
         "menu": 3,
         "diners": 4,
         "elaboration_time": "",
-        "category": [2],
+        "category": 2,
     "publication_date": "09/01/2023",
-        "ingredients": [
+        "img": {
+            "url": "img_10.png",
+            "alt": "Imagen de porras"
+        },
+        "ingredients":  [
             {
-                "ingredient": "",
+                "name": "",
                 "quantity": 0,
                 "measure": 1
             }

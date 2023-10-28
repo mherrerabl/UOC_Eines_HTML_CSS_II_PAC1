@@ -1,0 +1,25 @@
+.card-category {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-bottom: 100px;
+    
+    div {
+        margin: 0 auto;
+    }
+
+    label {
+        text-align: center;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    @media (min-width: $mobileWidth) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: $tabletWidth) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}

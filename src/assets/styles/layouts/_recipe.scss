@@ -1,0 +1,28 @@
+.recipe-book {
+    background-color: #DBC26D;
+        padding: 10px;
+
+    @media (min-width: $tabletWidth) {
+        padding: 25px; 
+    }
+}
+
+.recipe-content {
+    background-color: $color-text-white;
+    padding: 15px;
+
+    @media (min-width: $tabletWidth) {
+       padding: calc(10% + 25px); 
+    }
+
+    * {
+        text-align: center;
+    }
+
+
+    img {
+        max-width: 100%;
+        display: block;
+        margin: 0 auto;
+    }
+}

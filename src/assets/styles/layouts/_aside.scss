@@ -3,9 +3,7 @@ aside {
     border-width: thick;
     border-style: ridge;
     height: fit-content;
-}
 
-aside {
     .title--level-secundary {
         padding: 15px;
         border-bottom-style: ridge;
@@ -18,14 +16,18 @@ aside {
     .title--level-third {
         padding-left: 15px;
     }
-
+    
     li:not(:last-child) {
         border-bottom-style: ridge;
         border-bottom-width: thick;
         border-bottom-color: $color-primary;
     }
 
-    a {
+    .card {
+        margin: 25px;
+    }
+
+    /*a {
         cursor: pointer;
         display: block;
     }
@@ -36,6 +38,7 @@ aside {
 
     img {
         margin: 0 auto;
+        width: 100%;
     }
 
     a:hover {
@@ -44,7 +47,7 @@ aside {
 
     a:hover .title--level-third {
         color: $color-text-white;
-    }
+    }*/
 
     .swiper-container {
         max-width: 75vw;
