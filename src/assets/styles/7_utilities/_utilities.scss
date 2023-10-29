@@ -1,0 +1,11 @@
+/*------------------------------------*\
+  SWIPER
+\*------------------------------------*/
+.swiper-button-prev,
+.swiper-button-next {
+    color: $color-primary !important;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: $color-primary !important;
+}

@@ -1,10 +1,10 @@
 
 <template>
     <div>
-        <h2 class="title--level-secundary">{{ title }}</h2>
+        <h2 class="title--level-secundary blank-space--bottom-15">{{ title }}</h2>
         <Searcher/>
-        <categoriesList/>
-        <ul class="wrapper-card" v-if="recipes.length > 0">
+        <CategoriesList/>
+        <ul v-if="recipes.length > 0" class="card-container">
             <li class="card" v-for="(recipe) in recipes" :key="recipe.id">
                 <card :recipe="recipe"></card>
             </li>
@@ -19,8 +19,8 @@ import { capitalize, ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 
 //Components
-import Card from './card.vue';
-import CategoriesList from './categoriesList.vue';
+import Card from './Card.vue';
+import CategoriesList from './CategoriesList.vue';
 import Searcher from './Searcher.vue';
 
 //Variables

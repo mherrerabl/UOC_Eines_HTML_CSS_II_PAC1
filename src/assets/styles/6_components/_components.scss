@@ -1,0 +1,459 @@
+/*------------------------------------*\
+  COMPONENTS
+\*------------------------------------*/
+/*-------------------------------*\
+  Backgrounds
+\*-------------------------------*/
+.background--color-primary {
+    background-color: $color-primary;
+}
+
+.background--color-secundary {
+    background-color: $color-secundary;
+}
+
+
+
+/*-------------------------------*\
+  Logo
+\*-------------------------------*/
+.logo-link {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+
+
+/*-------------------------------*\
+  Links
+\*-------------------------------*/
+.links:hover,
+.links:focus {
+    @include link($color: $color-third, $weight: 'bold');
+}
+
+.router-link-active,
+.router-link-active:hover,
+.router-link-active:focus {
+    @include link($color: $color-primary, $weight: 'bold');
+    cursor: default;
+}
+
+
+
+/*-------------------------------*\
+  Breadcrumbs
+\*-------------------------------*/
+.breadcrumbs {
+    display: flex;
+
+    .breadcrumbs-separator {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    li:last-child .breadcrumbs-separator {
+        display: none;
+    }
+}
+
+
+
+/*-------------------------------*\
+  Cards
+\*-------------------------------*/
+.card {
+    position: relative;
+    display: flex;
+    
+    figure {
+        display: grid;
+        border-radius: 15px;
+        overflow: hidden;
+    
+
+        picture {
+            grid-area: 1 / 1;
+            transition: all 0.4s; 
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        figcaption {
+            @include text($size: 2.4rem,  $weight: 'bold');
+            padding: 15px;
+            background: $color-transparent;
+            grid-area: 1/1;
+            display: grid;
+            align-items: end;
+            clip-path: inset(var(--v, 0%) 0 0 0);
+            transition: 0.4s;
+        }
+    }
+
+    figure:hover {
+        figcaption{
+            --v: 100%;
+        }
+
+        img {
+            transform: scale(1.2);
+        }
+    }
+}
+/*
+.card:hover {
+    transform: scale(1.05, 1.05);
+    transition: transform 0.3s ease-out;
+
+    .card__wrapper-title {
+        animation: translatecard__wrapper-title 0.2s ease-out;
+        animation-fill-mode: forwards;
+    }
+
+    .title--level-third {
+        animation: translateCard__title 0.15s ease-out;
+        animation-fill-mode: forwards;
+    }
+}
+
+.card:focus {
+    animation: translateCard__state-focus 0.2s ease-in-out;
+    animation-fill-mode: forwards;
+}
+*/
+@keyframes translatecard__wrapper-title {
+    0% {
+        height: 100%;
+    }
+
+    50% {
+        height: 100%;
+    }
+
+    100% {
+        height: 0;
+        display: none;
+    }
+}
+
+@keyframes translateCard__title {
+    0% {
+        visibility: visible;
+    }
+
+    100% {
+        visibility: hidden;
+    }
+}
+
+@keyframes translateCard__state-focus {
+    0% {
+        transform: scale(1.05, 1.05);
+    }
+
+    50% {
+        transform: scale(0.8, 0.8);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+
+/*-------------------------------*\
+  Input searcher
+\*-------------------------------*/
+.searcher {
+    display: flex;
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    
+
+    &__label {
+        display: block;
+        position: absolute;
+        top: 0;
+        line-height: 30px;
+        color: $color-disable;
+        left: 5px;
+        padding: 0 5px;
+        transition: line-height 200ms ease-in-out,
+            font-size 200ms ease-in-out,
+            top 200ms ease-in-out;
+        pointer-events: none;
+    }
+
+    &__input {
+        width: 100%;
+        height: 30px;
+        border: 1px solid $color-disable;
+        border-radius: 3px;
+        padding: 0 10px;
+
+        &:not(:placeholder-shown),
+        &:focus {
+            +label {
+                background-color: $color-white;
+                line-height: 10px;
+                opacity: 1;
+                font-size: 10px;
+                top: -5px;
+            }
+        }
+
+        &:focus {
+            outline: none;
+            border: 2px solid $color-primary;
+
+            +label {
+                color: $color-primary;
+            }
+        }
+    }
+}
+
+
+/*-------------------------------*\
+  Input checkbox
+\*-------------------------------*/
+.checkbox-container input[type="checkbox"] {
+    display: none;
+    visibility: hidden;
+}
+
+.checkbox-container label {
+    position: relative;
+    padding-left: 35px;
+    padding-right: 15px;
+    line-height: 2;
+    cursor: pointer;
+    display: inline-flex;
+}
+
+.checkbox-container label:before {
+    box-sizing: border-box;
+    content: " ";
+    position: absolute;
+    top: 7px;
+    left: 6px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid $color-disable;
+    border-radius: 5px;
+    z-index: -1;
+}
+
+.checkbox-container input[type=checkbox]:checked + label {
+    padding-left: 30px;
+    color: $color-primary;
+}
+.checkbox-container input[type=checkbox]:checked + label:before {
+    top: 0;
+    width: 100%;
+    height: 35px;
+    background: $color-third;
+    border-color: $color-primary;
+}
+
+.checkbox-container label,
+.checkbox-container label::before {
+    transition: 0.25s all ease;
+}
+
+
+
+
+/*------------------------------------*\
+  NAV
+\*------------------------------------*/
+.nav-primary {
+    li {
+        height: 50px;
+    }
+
+    .router-link {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding-left: 15px;
+        padding-right: 15px;
+        color: $color-white;
+    }
+
+    .router-link:hover,
+    .router-link:focus {
+        @include link($color: $color-white, $background: $color-third, $weight: 'regular');
+    }
+
+    .router-link-active, 
+    .router-link-active:hover,
+    .router-link-active:focus {
+        @include link($color: $color-primary, $background: $color-white, $weight: 'regular');
+        cursor: default;
+    }
+
+    .fa-xmark {
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        cursor: pointer;
+    }
+}
+
+.dropdown__container {
+    .dropdown__button {
+        background: none;
+        border: none;
+    }
+
+    .fa-bars {
+        color: $color-white
+    }
+}
+
+
+
+
+
+/*------------------------------------*\
+  MENU
+\*------------------------------------*/
+.menu__card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+
+    .menu__title-container {
+        @extend %center-content-vertical-hortizontal;
+        width: 100%;
+        height: 75px;
+        background-color: $color-primary;
+        background: linear-gradient(to left, $color-primary 50%, $color-secundary 50%) right;
+        background-size: 200%;
+        transition: 0.2s ease-out;
+    }
+
+    .title--level-third {
+        @extend %center-content-vertical-hortizontal;
+        color: $color-white;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.menu__card:hover { 
+    .menu__title-container {
+        background-position: left;
+        height: 150px;
+    }
+}
+
+
+
+
+/*------------------------------------*\
+  ASIDE
+\*------------------------------------*/
+%borderBottom {
+    border-bottom-color: $color-primary;
+    border-bottom-style: solid;
+    border-width: 4px;
+}
+
+.aside-container {
+    border-color: $color-primary;
+    border-style: solid;
+    border-width: 4px;
+
+    .title--level-secundary {
+        padding: 15px;
+        @extend %borderBottom;
+        color: $color-white;
+        background-color: $color-primary;
+    }
+    
+    li:not(:last-child) {
+        @extend %borderBottom;
+    }
+
+    .card {
+        margin: 15px;
+    }
+
+    .swiper-container {
+        max-width: 85vw;
+        margin: 0;
+    }
+}
+
+
+
+
+
+/*------------------------------------*\
+  RECIPE
+\*------------------------------------*/
+.recipe__container {
+    background-color: #DBC26D;
+}
+
+.recipe__content {
+    background-color: $color-white;
+
+    * {
+        text-align: center;
+    }
+
+    p,
+    li {
+        margin-bottom: 10px;
+    }
+
+    p {
+        line-height: 2.8rem;
+    }
+
+    img {
+        max-width: 100%;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+
+
+
+
+/*------------------------------------*\
+  FOOTER
+\*------------------------------------*/
+.footer-container {
+    margin-top: 50px;
+
+    ul {
+        text-align: center;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    li {
+        color: $color-white;
+    }
+
+    li:not(:last-child) {
+        margin-bottom: 15px;
+    }
+}

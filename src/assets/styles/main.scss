@@ -6,13 +6,40 @@
 /**
  * Import variables
  */
+@import './1_settings/variables';
 
-@import 'variables';
-@import 'mixins';
+/**
+ * Import mixins
+ */
+@import './2_tools/mixins';
 
-/*IMPORT GENERALS*/
+/**
+ * Import normalize
+ */
+@import './3_generic/generics';
 
-@import 'generals';
+/**
+ * Import styles elements HTML
+ */
+@import './4_elements/elements';
+
+/**
+ * Import layouts 
+ */
+@import './5_objects/layouts';
+
+/**
+ * Import styles components
+ */
+@import './6_components/components';
+
+/**
+ * Import override styles
+ */
+@import './7_utilities/utilities';
+
+
+
 
 /**
  * Import npm dependencies
@@ -27,14 +54,6 @@
  * Import layouts
  * It's a best practice to use a different partial for each page
  */
-
-@import 'layouts/pageContent';
-@import 'layouts/header';
-@import 'layouts/menu';
-@import 'layouts/aside';
-@import 'layouts/categories';
-@import 'layouts/recipe';
-
 
 /**
  * Do NOT include anything else in this file!

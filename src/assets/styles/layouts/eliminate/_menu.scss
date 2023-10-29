@@ -1,4 +1,4 @@
-.card-menu-container {
+.menu__container {
     display: grid;
     grid-template-columns: 1fr;
     gap: 25px;
@@ -8,12 +8,10 @@
     }
 }
 
-.card-menu {
+.menu__card {
     position: relative;
-}
 
-.card-menu {
-    div {
+    .menu__title-container {
         @extend %center-content-vertical-hortizontal;
         width: 100%;
         height: 75px;
@@ -25,7 +23,7 @@
 
     .title--level-third {
         @extend %center-content-vertical-hortizontal;
-        color: $color-text-white;
+        color: $color-white;
     }
 
     img {
@@ -34,13 +32,13 @@
     }
 }
 
-.card-menu:hover { 
-    div {
+.menu__card:hover { 
+    .menu__title-container {
         background-position: left;
         height: 150px;
     }
 
     .title--level-third {
-        color: $color-text-black;
+        color: $color-black;
     }
 }

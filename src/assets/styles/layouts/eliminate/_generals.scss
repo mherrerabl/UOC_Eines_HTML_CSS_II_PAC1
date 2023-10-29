@@ -1,24 +1,12 @@
-/*Reiniciar*/
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-size: 10px;
-}
 
-body {
-    margin: 0 auto;
+/*.nav-primary__content > li,
+.router-link {
+    @include text($marginBottom: 0);
 }
+*/
 
-ul {
-    list-style: none;
-}
 
-a {
-    text-decoration: none;
-}
-
-/*COLORES DE FONDO*/
+/*
 .background--color-primary {
     background-color: $color-primary;
 }
@@ -27,87 +15,40 @@ a {
     background-color: $color-secundary;
 }
 
-/** TEXTO */
-.title--level-primary {
-    @include text($font: $font-family--title-primary, $size: 4.6rem, $color: $color-text-white);
-}
-
-.title--level-secundary {
-    @include text($font: $font-family--title-primary, $size: 3.2rem);
-}
-
-.title--level-third {
-    @include text($font: $font-family--title-primary, $size: 2.8rem);
-}
-
-.title--level-fourth {
-    @include text($font: $font-family--title-primary, $size: 2.4rem);
-}
-
-p,
-li,
-a:not(.logo-link),
-label,
-.foreignWords {
-    @include text;
-}
-
-.nav-primary>li,
-.router-link {
-    @include text($marginBottom: 0);
-}
-
-/**MARGENES*/
-%center-main-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.center-content {
-    @extend %center-main-content;
-}
-
-.center-content--padding-25-50 {
-    @extend %center-main-content;
-    padding: 25px 50px;
-
-}
-
-.center-content--padding-0 {
-    @extend %center-main-content;
-    padding: 0px;
-}
-
-//Centrar cualquier contenido
-%center-content-vertical-hortizontal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50.2%, -50%);
-}
-
-/*links*/
-.links {
-    text-decoration: underline $color-primary;
-    cursor: pointer;
-}
-
+//links
 .link:hover {
-    @include links-hover($color: $color-third, $weight: 600, $underline: none)
+    @include link($color: $color-third, $weight: 'bold');
 }
 
-/*btn*/
+//btn
 .btn-primary {
     @include btn;
     width: 50px;
     height: 25px;
 }
-
+*/
 /** Navegación */
 .nav-primary {
-    display: flex;
-    justify-content: center;
+    width: 0%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
 
+    @media (min-width: $tabletWidth) {
+        position: relative;
+        width: 100%;
+    }
+
+    .nav-primary__content {
+        @media (min-width: $tabletWidth) {
+            display: flex;
+            justify-content: center;
+        }
+    }
+    
     li {
         height: 50px;
     }
@@ -123,15 +64,40 @@ label,
     }
 
     .router-link-active {
-        @include btn-hover-active;
+        @include link($color: $color-primary, $background: $color-white, $weight: 'regular');
         cursor: default;
     }
 
     .router-link:hover {
-        @include btn-hover-active;
+        @include link($color: $color-white, $background: $color-third, $weight: 'regular');
+    } 
+
+    .fa-xmark{
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        cursor: pointer;
     }
 }
 
+.dropdown__container {
+    position: absolute;
+    top: 5.5%;
+    left: 5%;
+
+    .dropdown__button {
+        background: none;
+        border: none;
+    }
+
+    .fa-bars {
+        color: $color-white
+    }
+
+    @media (min-width: $tabletWidth) {
+        display: none;
+    }
+}
 
 
 /**breadcrumbs*/
@@ -148,17 +114,17 @@ label,
     }
 
     .router-link-active {
-        @include link-hover-active;
+        @include link($color: $color-primary, $weight: 'bold');
         cursor: default;
     }
 
     .breadcrumbs-links:hover {
-        @include link-hover-active;
+        @include link($color: $color-third, $weight: 'bold');
     }
 }
 
 /*cards*/
-.wrapper-card {
+.card-container {
     display: grid;
     grid-template-columns: 1fr;
     gap: 25px;
@@ -170,15 +136,13 @@ label,
     @media (min-width: $tabletWidth) {
         grid-template-columns: 1fr 1fr 1fr;
     }
-
-
 }
 
 .card {
     position: relative;
     display: flex;
 
-    .card__wrapper-title {
+    .card__title-container {
         position: absolute;
         bottom: 0;
         background-image: linear-gradient($color-transparent, $color-disable);
@@ -293,7 +257,7 @@ label,
         &:not(:placeholder-shown),
         &:focus {
             +label {
-                background-color: $color-text-white;
+                background-color: $color-white;
                 line-height: 10px;
                 opacity: 1;
                 font-size: 10px;
@@ -309,5 +273,42 @@ label,
                 color: $color-primary;
             }
         }
+    }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: $color-primary !important;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: $color-primary !important;
+}
+
+
+
+
+.logo-link {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+.footer-container {
+    margin-top: 50px;
+
+    ul {
+        text-align: center;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    li:last-child {
+        margin-bottom: 0;
     }
 }

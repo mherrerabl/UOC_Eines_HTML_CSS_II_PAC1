@@ -1,10 +1,10 @@
 <template>
     <div>
-        <h2 class="title--level-secundary">Menú</h2>
+        <h2 class="title--level-secundary blank-space--bottom-15">Menú</h2>
 
-        <div class="card-menu-container">
-            <router-link :to="{ name: 'menu', params: {name: 'entrantes'} }" class="card-menu">
-                <div>
+        <div class="menu__container">
+            <router-link :to="{ name: 'menu', params: {name: 'entrantes'} }" class="menu__card">
+                <div class="menu__title-container">
                     <h3 class="title--level-third">Entrantes</h3>
                 </div>
                 <picture>
@@ -12,8 +12,8 @@
                     <img src="./../../assets/images/recipes/1698226906862.png" alt="">
                 </picture>
             </router-link>
-            <router-link :to="{ name: 'menu', params: {name: 'primeros'} }" class="card-menu">
-                <div>
+            <router-link :to="{ name: 'menu', params: {name: 'primeros'} }" class="menu__card">
+                <div class="menu__title-container">
                     <h3 class="title--level-third">Primeros</h3>
                 </div>
                 <picture>
@@ -21,8 +21,8 @@
                     <img src="./../../assets/images/recipes/img_4.png" alt="">
                 </picture>
             </router-link>
-            <router-link :to="{ name: 'menu', params: {name: 'segundos'} }" class="card-menu">
-                <div>
+            <router-link :to="{ name: 'menu', params: {name: 'segundos'} }" class="menu__card">
+                <div class="menu__title-container">
                     <h3 class="title--level-third">Segundos</h3>
                 </div>
                 <picture>
@@ -30,8 +30,8 @@
                     <img src="./../../assets/images/recipes/img_5.png" alt="">
                 </picture>
             </router-link>
-            <router-link :to="{ name: 'menu', params: {name: 'postres'} }" class="card-menu">
-                <div>
+            <router-link :to="{ name: 'menu', params: {name: 'postres'} }" class="menu__card">
+                <div class="menu__title-container">
                     <h3 class="title--level-third">Postres</h3>
                 </div>
                 <picture>

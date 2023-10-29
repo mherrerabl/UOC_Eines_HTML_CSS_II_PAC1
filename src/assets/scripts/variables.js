@@ -11,8 +11,10 @@ import { ref } from "vue";
 let isReset = false;
 const searcher = ref();
 const categorySelected = ref([]);
-let urlImages = "https://raw.githubusercontent.com/mherrerabl/UOC_Eines_HTML_CSS_II_PAC1/main/src/assets/images/recipes/";
+const urlImages = "https://raw.githubusercontent.com/mherrerabl/UOC_Eines_HTML_CSS_II_PAC1/main/src/assets/images/recipes/";
+const mobileWidth = 420;
+const tabletWidth = 800;
+let smallScreen = window.screen.width > tabletWidth ? false : true;
 
-
-export { categoriesJson, categorySelected, isReset, measuresJson, menuJson, recipesJson, searcher, urlImages };
+export { categoriesJson, categorySelected, isReset, measuresJson, menuJson, mobileWidth, recipesJson, searcher, smallScreen, tabletWidth, urlImages };
 

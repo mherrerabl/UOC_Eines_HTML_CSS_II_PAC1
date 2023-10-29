@@ -1,11 +1,10 @@
 <template>
     <div>
-        <h3 class="title--level-third">Categorias</h3>
-        <form class="card-category">
-            <div v-for="(category) in categories" :key="category.id">
-                <label :for="category.name" :style="{'background-color': category.color}">
+        <h3 class="title--level-third blank-space--bottom-15">Categorias</h3>
+        <form class="category__form">
+            <div v-for="(category) in categories" :key="category.id" class="checkbox-container">
                     <input type="checkbox" :id="category.name" :value="category.name" v-model="categoriesSelected">
-                    {{ category.name }}
+                    <label :for="category.name">{{ category.name }}
                 </label>
             </div>
         </form>

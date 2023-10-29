@@ -2,7 +2,7 @@
 <template>
     <ul class="breadcrumbs center-content--padding-25-50" v-if="$route.name !== 'inicio'">
         <li v-for="(route, index) in updateArrayRoute" :key="index">
-            <router-link :to="route.path" class="breadcrumbs-links">
+            <router-link :to="route.path" class="links">
                 {{ route.name }}
             </router-link>
             <span class="breadcrumbs-separator">></span>

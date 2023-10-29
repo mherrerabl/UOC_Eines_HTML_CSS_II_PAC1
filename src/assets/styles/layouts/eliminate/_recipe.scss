@@ -1,14 +1,14 @@
-.recipe-book {
+.recipe__container {
     background-color: #DBC26D;
-        padding: 10px;
+    padding: 10px;
 
     @media (min-width: $tabletWidth) {
         padding: 25px; 
     }
 }
 
-.recipe-content {
-    background-color: $color-text-white;
+.recipe__content {
+    background-color: $color-white;
     padding: 15px;
 
     @media (min-width: $tabletWidth) {

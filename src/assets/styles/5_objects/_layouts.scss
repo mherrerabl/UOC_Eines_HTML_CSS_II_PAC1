@@ -1,0 +1,222 @@
+/*------------------------------------*\
+  GENERAL LAYOUT
+\*------------------------------------*/
+
+/*-------------------------------*\
+  Center content on screen
+\*-------------------------------*/
+
+%center-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.center-content {
+    @extend %center-container;
+}
+
+.center-content--padding-25-50 {
+    @extend %center-container;
+    padding: 25px;
+
+    @media (min-width: $tabletWidth) {
+        padding: 25px 50px;
+    }
+}
+
+.center-content--padding-0 {
+    @extend %center-container;
+    padding: 0px;
+}
+
+
+/*-------------------------------*\
+  Center content vertical
+  and hortizontal
+\*-------------------------------*/
+%center-content-vertical-hortizontal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/*-------------------------------*\
+  Blank space 
+\*-------------------------------*/
+.blank-space--bottom-15 {
+    margin-bottom: 15px;
+}
+
+.blank-space--bottom-25 {
+    margin-bottom: 25px;
+}
+
+
+
+
+
+/*------------------------------------*\
+  HEADER LAYOUT
+\*------------------------------------*/
+.container-header {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.logo-link > svg {
+    display: block;
+    margin: auto;
+}
+
+
+
+
+
+/*------------------------------------*\
+  NAV LAYOUT
+\*------------------------------------*/
+.nav-primary {
+    width: 0%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+
+    @media (min-width: $tabletWidth) {
+        position: relative;
+        width: 100%;
+    }
+
+    .nav-primary__content {
+        @media (min-width: $tabletWidth) {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+
+.dropdown__container {
+    position: absolute;
+    top: 5.5%;
+    left: 5%;
+
+    @media (min-width: $tabletWidth) {
+        display: none;
+    }
+}
+
+
+
+
+
+/*------------------------------------*\
+  PAGE (MAIN AND ASIDE) LAYOUT
+\*------------------------------------*/
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+  
+    @media (min-width: $tabletWidth) {
+      grid-template-columns: 3fr 1fr;
+    }
+}
+
+.container > main {
+    @media (min-width: $tabletWidth) {
+        margin-left: 25px;
+    }
+}
+
+.container > aside {
+    @media (min-width: $tabletWidth) {
+        margin-right: 25px;
+    }
+}
+
+
+
+
+
+/*------------------------------------*\
+  MENU LAYOUT
+\*------------------------------------*/
+.menu__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+
+    @media (min-width: $tabletWidth) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+
+
+
+/*------------------------------------*\
+  CATEGORIES LAYOUT
+\*------------------------------------*/
+.category__form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    margin-bottom: 50px;
+
+    @media (min-width: $mobileWidth) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: $tabletWidth) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+
+
+
+
+/*------------------------------------*\
+  RECIPE LIST LAYOUT
+\*------------------------------------*/
+.card-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+
+    @media (min-width: $mobileWidth) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: $tabletWidth) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+
+
+
+
+/*------------------------------------*\
+  RECIPE LAYOUT
+\*------------------------------------*/
+.recipe__container {
+    padding: 10px;
+
+    @media (min-width: $tabletWidth) {
+        padding: 15px; 
+    }
+}
+
+.recipe__content {
+    padding: 5%;
+
+    @media (min-width: $tabletWidth) {
+       padding: calc(5% + 15px); 
+    }
+}

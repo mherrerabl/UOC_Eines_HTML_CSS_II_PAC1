@@ -1,0 +1,35 @@
+/*------------------------------------*\
+  HTML ELEMENTS 
+\*------------------------------------*/
+
+/*-------------------------------*\
+  Text elements
+\*-------------------------------*/
+h1 {
+    @include text($font: $font-family--title, $size: 4.6rem, $color: $color-white);
+}
+
+h2 {
+    @include text($font: $font-family--title, $size: 3.2rem);
+}
+
+h3 {
+    @include text($font: $font-family--title, $size: 2.8rem);
+}
+
+h4 {
+    @include text($font: $font-family--title, $size: 2.4rem);
+}
+
+p,
+li,
+a,
+label,
+i {
+    @include text;
+}
+
+a {
+    @include text($color: $color-secundary);
+}
+
