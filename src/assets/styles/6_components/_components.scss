@@ -95,7 +95,8 @@
         }
     }
 
-    figure:hover {
+    figure:hover, 
+    figure:focus {
         figcaption{
             --v: 100%;
         }
@@ -354,7 +355,8 @@
     }
 }
 
-.menu__card:hover { 
+.menu__card:hover,
+.menu__card:focus { 
     .menu__title-container {
         background-position: left;
         height: 150px;

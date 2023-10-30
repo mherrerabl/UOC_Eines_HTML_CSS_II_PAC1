@@ -7,7 +7,8 @@
         "elaboration_time": "60 minutos",
         "category": 2,
         "publication_date": "25/10/2023",
-        "img": {
+        "img": 
+            {
             "url": "img_1.png",
             "alt": "Imagen de croquetas de pollo asado"
         },
