@@ -58,7 +58,8 @@ const filterByCategory = (category) => {
 
 //Return array of objects that recipes 'name' match with param 'name'
 const filterByText = (name) => {
-    return recipes.filter((recipe) => recipe.name.toLowerCase().includes(name.toLowerCase()));
+    let recipesAll = sortRecipes();
+    return recipesAll.filter((recipe) => recipe.name.toLowerCase().includes(name.toLowerCase()));
 }
 
 //Executate the functions filters and return and object of recipes

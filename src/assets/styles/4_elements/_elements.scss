@@ -26,7 +26,8 @@ p,
 li,
 a,
 label,
-i {
+i, 
+input {
     @include text;
 }
 
@@ -36,7 +37,6 @@ a {
 
 section {
     margin-bottom: 50px;
-    padding-bottom: 25px;
 }
 
 section:nth-child(even) {

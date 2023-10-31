@@ -1,5 +1,5 @@
 <template>
-  <a href="#recipe" class="card" :id="'recipe_'+recipe.id">
+  <a class="card" :id="'recipe_'+recipe.id">
     <div class="card__container">  
           <picture>
             <img :src="urlImages+'jpg/'+recipe.id+'/img_'+recipe.id+'_690.jpg'"

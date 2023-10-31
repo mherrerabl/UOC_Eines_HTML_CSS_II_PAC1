@@ -20,7 +20,7 @@ import RecipesList from './../../views/main/recipesList/RecipesList.vue';
 /**
  * Import variables
  */
-import { menuSelected, mobileScreens, recipeSelected } from './variables';
+import { menuSelected, mobileScreens, recipeSelected, tabletScreens } from './variables';
 
 /**
  * Write any other JavaScript below
@@ -44,9 +44,24 @@ import { menuSelected, mobileScreens, recipeSelected } from './variables';
    * Scrolls
    */
   //When users click some link, it moves to the section of the page
-  $('a').on('click', function(){
+  $('.menu__container a').on('click', function(){
     $('html, body').animate({
-        scrollTop: $( $(this).attr('href') ).offset().top
+        scrollTop: $( $(this).attr('href') ).offset().top - 100
+    }, 500);
+    return false;
+  });
+
+
+  $('#news__container a').on('click', function(){
+    $('html, body').animate({
+        scrollTop:  $( '#recipe' ).offset().top - 100
+    }, 500);
+    return false;
+  });
+
+  $('#recipes a').on('click', function(){
+    $('html, body').animate({
+        scrollTop:  $( '#recipe' ).offset().top - 100
     }, 500);
     return false;
   });
@@ -54,7 +69,7 @@ import { menuSelected, mobileScreens, recipeSelected } from './variables';
   //When users click input searcher, it moves to the section of the page
   $('.nav-primary__content input').on('click', function(){
     $('html, body').animate({
-        scrollTop: $('#recipes').offset().top
+        scrollTop: $('#recipes').offset().top - 50
     }, 500);
 
   });
@@ -109,70 +124,54 @@ import { menuSelected, mobileScreens, recipeSelected } from './variables';
   });
 
 
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
 
 
   /**
    * Logo
    */
-  let logo = document.querySelector('.svgLogo');
-  logo.style.color = '#FFF';
-  if (!mobileScreens) {
-    logo.setAttribute('width', 300);
-    logo.setAttribute('height', 125);
+  $('.svgLogo').css('color', '#FFF');
+
+  if (!tabletScreens) {
+    $('.svgLogo').attr('width', '300');
+    $('.svgLogo').attr('height', '125');
   }
 
-  const hover = (e) => {
-    (e.type === 'mouseenter') ? logo.style.color = '#4F4A45' : logo.style.color = '#FFF';
-  }
+  $('.svgLogo').on('mouseenter', function() {
+    $('.svgLogo').css('color', '#4F4A45')
+  });
+  $('.svgLogo').on('mouseleave', function() {
+    $(this).css('color', '#FFF')
+  });
 
-  logo.addEventListener('mouseenter', hover);
-  logo.addEventListener('mouseleave', hover);
+
+
+
 
   /**
-   * Dropdown nav
-   *//*
-  let buttonDropdown = document.querySelector('.dropdown__button');
-  let navDropdown = document.querySelector('#nav-primary');
-  let closeDropdown = document.querySelector('#close-dropwdown');
-
-  buttonDropdown.addEventListener('click', () => {
-    navDropdown.style.width = '100%';
+   * Focus card when scroll on small screens
+   */
+  $(window).on('scroll', function () {
+    if(mobileScreens) {
+      $('.card__container').each(function () {
+          if (isOnViewport(this) === true) {
+              $(this).addClass('card--state-active');
+          } else {
+            $(this).removeClass('card--state-active');
+          }
+      });
+    }
   });
 
-  closeDropdown.addEventListener('click', () => {
-    navDropdown.style.width = '0%';
-  });
+  //Detect if an element HTML is on viewport
+  function isOnViewport(elem) {
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
 
- */
-  
+    var elemTop = $(elem).offset().top;
+    var elemBottom = elemTop + $(elem).height();
+
+    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+  }
   
 })();
-
-
