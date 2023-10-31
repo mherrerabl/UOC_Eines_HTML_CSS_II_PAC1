@@ -78,6 +78,18 @@
   NAV LAYOUT
 \*------------------------------------*/
 .nav-primary {
+    position: relative;
+    height: 40px;
+
+    .searcher {
+        @extend %center-content-vertical-hortizontal;
+
+        @media (min-width: $tabletWidth) {
+           left: 80%;
+        }
+    }
+}
+/*.nav-primary {
     width: 0%;
     position: fixed;
     z-index: 1;
@@ -97,7 +109,7 @@
             justify-content: center;
         }
     }
-}
+}*/
 
 .dropdown__container {
     position: absolute;
@@ -117,27 +129,27 @@
   PAGE (MAIN AND ASIDE) LAYOUT
 \*------------------------------------*/
 .container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 50px;
+    
   
     @media (min-width: $tabletWidth) {
-      grid-template-columns: 3fr 1fr;
+      padding-left: 50px;
+      padding-right: 50px;
     }
 }
-
+/*
 .container > main {
     @media (min-width: $tabletWidth) {
         margin-left: 25px;
     }
 }
 
+
 .container > aside {
     @media (min-width: $tabletWidth) {
         margin-right: 25px;
     }
 }
-
+*/
 
 
 
@@ -147,11 +159,11 @@
 \*------------------------------------*/
 .menu__container {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 25px;
 
     @media (min-width: $tabletWidth) {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
 
@@ -184,7 +196,7 @@
 /*------------------------------------*\
   RECIPE LIST LAYOUT
 \*------------------------------------*/
-.card-container {
+.list__container{
     display: grid;
     grid-template-columns: 1fr;
     gap: 25px;
@@ -194,8 +206,12 @@
     }
 
     @media (min-width: $tabletWidth) {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
+}
+
+.card__container {
+    display: grid;
 }
 
 

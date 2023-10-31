@@ -1,45 +1,38 @@
 //Variables
-import { categoriesJson, categorySelected, measuresJson, menuJson, recipesJson, searcher } from "./variables";
+import { categoriesJson, categorySelected, measuresJson, menuJson, menuSelected, recipesJson, searcher } from "./variables";
 
 //Functions Vue
 import { capitalize } from "vue";
 
-const compareArrayNumber = (num, param, arrayJson) => {
-    let array = [];
-    array = arrayJson.filter(obj => obj.name === param);
-    return (array[0].id === num) ? true : false;            
+//Compare numbers (id)
+const compareNumbers = (num1, num2) => {
+    return (num1 === num2) ? true : false;
+}
+
+//Look for in the arrayObj if there are any param 'name' that matches with the string 'text'.
+const compareArrayString = (id, text, arrayObj) => {
+    let array = arrayObj.filter(obj => obj.name === text )[0];
+    return compareNumbers(array.id, id);
 } 
 
-const compareArrays = (num, param, arrayJson) => {
-    let array = [];
- 
-    array = arrayJson.filter(({ name }) => 
-        param.some(x => x === name)
+//Look for in the arrayObj if there are any param 'name' that matches with some string of arrayString.
+//If not found, return false.
+//If there are any matches, iterated the result (variable newArrayObj) to looking for if param 'id' match with 'id' of newArrayObj.
+//If found, return true.
+const compareArrays = (id, arrayString, arrayObj) => {
+    let newArrayObj = arrayObj.filter(({ name }) => 
+        arrayString.some(x => x === name)
     );
 
-    if (array.length <= 0) {
-        return true;
-    }
+    if (newArrayObj.length <= 0) { return true; }
 
-    for (const item of array) {
-        if (item.id === num) {
-            return true;
-        }
+    for (const item of newArrayObj) {
+        return compareNumbers(item.id, id)
     }            
     return false;
 }
 
-const changeRoute = (router, route, searcher) => {
-    if(searcher.value !== undefined && searcher.value !== '') {
-        if (route.params.name !== undefined) {
-            router.push({ path: route.path });
-        } else {
-            router.push({ path: '/recetario' });
-        }
-        
-    }
-}
-
+//Return array of objects that recipes sorted by descendant publication date
 const sortRecipes = () => {
     return recipesJson.sort((a,b) => {
         let dateB = `${b.publication_date.slice(3,5)}/${b.publication_date.slice(0,2)}/${b.publication_date.slice(6,10)}`;
@@ -48,32 +41,33 @@ const sortRecipes = () => {
     });
 }
 
-const filterByMenu = (route) => {  
-    if (route.params.name !== undefined) {
-        return recipes.filter((recipe) => {
-            return compareArrayNumber(recipe.menu, route.params.name, menuJson); 
-        })
-    }
+//Return array of objects that recipes 'menu' match with param 'menu' (string)
+const filterByMenu = (menu) => {  
+    return recipes.filter((recipe) => {
+        return compareArrayString(recipe.menu, menu, menuJson); 
+    });
+
 }
 
+//Return array of objects that recipes 'category' match with param 'category'
 const filterByCategory = (category) => {
     return recipes.filter((recipe) => {
         return compareArrays(recipe.category, category.value, categoriesJson);
     })
 }
 
-const filterByText = (text) => {
-    return recipes.filter((recipe) => recipe.name.toLowerCase().includes(text.toLowerCase()));
+//Return array of objects that recipes 'name' match with param 'name'
+const filterByText = (name) => {
+    return recipes.filter((recipe) => recipe.name.toLowerCase().includes(name.toLowerCase()));
 }
 
-const filteredRecipes = (route) => {
+//Executate the functions filters and return and object of recipes
+const filteredRecipes = () => {
     recipes = recipesJson;
     recipes = sortRecipes();
 
-    if (route.name !== undefined) {
-        if (route.name === 'menu') {
-            recipes = filterByMenu(route);
-        }
+    if (menuSelected.value !== undefined) {
+        recipes = filterByMenu(menuSelected.value);
     }
 
     if (categorySelected.value !== undefined && categorySelected.value !== '') {
@@ -87,19 +81,22 @@ const filteredRecipes = (route) => {
     return recipes;
 }
 
-const reset = () => {
-    categorySelected.value = [];
-    searcher.value = undefined;
-}
 
+/**
+ * Functions to create dynamically a Recipe
+ */
+//Receive a number (id) and return the name of menu
 const searchMenu = (num) => {
     return capitalize((menuJson.filter(({ id }) => id === num))[0].name);
 }
 
+//Receive a number (id) and return the categoy name
 const searchCategory = (num) => {
     return ((categoriesJson.filter(({ id }) => id === num))[0].name).toLowerCase();
 }
 
+//Receive a number (id), if want long word or abbreviation 
+//and if want a plural or singular measure
 const searchMeasure = (num, typeLongWord, theNumberWord) => {
     let measure = (measuresJson.filter(({ id }) => id === num))[0];
 
@@ -109,8 +106,10 @@ const searchMeasure = (num, typeLongWord, theNumberWord) => {
     return measure[`${typeLongWord}`][`${theNumberWord}`]+' de';
 }
 
+//Receive a number (id) and return an recipe object
 const searchRecipe = (idParam) => {
     return (recipesJson.filter(({id}) => id.toString() === idParam))[0];
 }
 
-export { changeRoute, filteredRecipes, reset, searchCategory, searchMeasure, searchMenu, searchRecipe, sortRecipes };
+export { capitalize, changeRoute, filteredRecipes, reset, searchCategory, searchMeasure, searchMenu, searchRecipe, sortRecipes };
+

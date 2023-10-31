@@ -34,8 +34,8 @@
     {
         "id": 5,
         "longName": {
-            "singular": "cucharadita de café",
-            "plural": "cucharaditas de café"
+            "singular": "cucharadita",
+            "plural": "cucharaditas"
         },
         "abbreviation": "c.c"
     },

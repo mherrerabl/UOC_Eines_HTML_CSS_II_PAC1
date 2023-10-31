@@ -1,6 +1,6 @@
 <template>
-    <div class="recipe__container">
-        <div class="recipe__content">
+    <div class="recipe__container center-content--padding-25-50" v-if="recipe !== undefined">
+        <div class="recipe__content paper">
             <h2 class="title--level-secundary blank-space--bottom-25">{{ recipe.name }}</h2>
             <h3 class="title--level-third blank-space--bottom-25">{{ searchMenu(recipe.menu) }}</h3>
             <h4 class="title--level-fourth blank-space--bottom-25">Receta {{ searchCategory(recipe.category) }}</h4>
@@ -23,8 +23,8 @@
             </div>
 
             <picture>                 
-                <source :srcset="urlImages+recipe.img.url+'?as=webp'" type="image/webp">
-                <img :src="urlImages+recipe.img.url" :alt="recipe.img.alt">
+                <source :srcset="urlImages+'webp/'+recipe.id+'/img_'+recipe.id+'_690.webp'" type="image/webp">
+                <img :src="urlImages+'jpg/'+recipe.id+'/img_'+recipe.id+'_690.jpg'" :alt="recipe.name">
             </picture>
         </div>
     </div>
@@ -33,24 +33,22 @@
 <script>
 //Functions Vue
 import { ref, watch } from "vue";
-import { useRoute } from "vue-router";
 
 //Variables
-import { urlImages } from "../../assets/scripts/variables";
+import { urlImages, recipeSelected } from "./../../../assets/scripts/variables";
 
 //Functions
-import { searchCategory, searchMeasure, searchMenu, searchRecipe } from '../../assets/scripts/functions';
+import { searchCategory, searchMeasure, searchMenu, searchRecipe } from './../../../assets/scripts/functions';
 
 export default {
     setup() {
-        let route = useRoute();
-        let recipe = ref(searchRecipe(route.params.id));
+        let recipe = ref(searchRecipe(recipeSelected.value));
 
-        watch(route, () => {
-            recipe.value = searchRecipe(route.params.id);
+        watch(recipeSelected, () => {
+            recipe.value = searchRecipe(recipeSelected.value);
         });
 
-        return { recipe, searchMenu, searchCategory, urlImages, searchMeasure }
+        return { recipe, searchMenu, searchCategory, urlImages, searchMeasure, recipeSelected }
     }
 }
 </script>

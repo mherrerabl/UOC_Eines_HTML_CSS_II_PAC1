@@ -6,21 +6,21 @@
 // import 'some-node-module';
 // import SomeModule from 'some-node-module';
 
+import $ from 'jquery';
 import { createApp } from 'vue';
-import { createRouter, createWebHistory } from 'vue-router';
 
-import Aside from '../../views/components/Aside.vue';
-import Breadcrumbs from './../../views/components/Breadcrumbs.vue';
-import MainContent from './../../views/components/MainContent.vue';
-import Menu from './../../views/components/Menu.vue';
-import NavPrimary from './../../views/components/NavPrimary.vue';
-import Recipe from './../../views/components/Recipe.vue';
-import RecipesList from './../../views/components/RecipesList.vue';
+/**
+ * Import components
+ */
+import NavPrimary from './../../views/header/NavPrimary.vue';
+import News from './../../views/main/news/News.vue';
+import Recipe from './../../views/main/recipe/Recipe.vue';
+import RecipesList from './../../views/main/recipesList/RecipesList.vue';
 
 /**
  * Import variables
  */
-import { smallScreen } from './variables';
+import { menuSelected, mobileScreens, recipeSelected } from './variables';
 
 /**
  * Write any other JavaScript below
@@ -29,32 +29,112 @@ import { smallScreen } from './variables';
 +(function () {
 
   /**
-   * Vue Routes
+   * Mount Vue components
    */
-  const routes = [
-    { path: '', name: 'inicio', component: Menu },
-    { path: '/', redirect: '' },
-    { path: '/recetario', name: 'recetario', component: RecipesList },
-    { path: '/recetario/:id', name: 'receta', component: Recipe },
-    { path: '/menu/:name', name: 'menu', component: RecipesList },
-    { path: '/:pathMatch(.*)*', redirect: '/' }
-  ]
+  createApp(NavPrimary).mount('#nav-primary');
+  createApp(News).mount('#news__container');
+  createApp(RecipesList).mount('#recipes');
+  createApp(Recipe).mount('#recipe');
 
-  const router = createRouter({
-    history: createWebHistory(),
-    routes,
-    scrollBehavior(to, from, savedPosition) {
-      return { top: 0 }
+
+
+
+
+  /**
+   * Scrolls
+   */
+  //When users click some link, it moves to the section of the page
+  $('a').on('click', function(){
+    $('html, body').animate({
+        scrollTop: $( $(this).attr('href') ).offset().top
+    }, 500);
+    return false;
+  });
+
+  //When users click input searcher, it moves to the section of the page
+  $('.nav-primary__content input').on('click', function(){
+    $('html, body').animate({
+        scrollTop: $('#recipes').offset().top
+    }, 500);
+
+  });
+
+  //Button moves you to the top of the page
+  $('#buttonTop').on('click', function() {
+    $('html, body').animate({
+      scrollTop: 0, 
+  }, 500, 'swing');
+  })  
+
+  //Show the button when scrolls down 20px
+  $(window).on('scroll', function() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      $('#buttonTop').css('display', 'block');
+    } else {
+      $('#buttonTop').css('display', 'none');
     }
   });
 
+
+
+
+
   /**
-   * Mount Vue components
+   * Fixed elements
    */
-  createApp(NavPrimary).use(router).mount('#nav-primary');
-  createApp(Breadcrumbs).use(router).mount('#breadcrumbs');
-  createApp(MainContent).use(router).mount('#main-content');
-  createApp(Aside).use(router).mount('#aside-content');
+  //Fix searcher on top when scrolls
+  let stickyOffset = $('#nav-primary').offset().top;
+
+  $(window).on('scroll', function () {
+    let sticky = $('#nav-primary');
+    let scroll = $(window).scrollTop();
+
+    (scroll >= stickyOffset) ? sticky.addClass('searcherFixed') : sticky.removeClass('searcherFixed');
+  });
+
+
+
+  /**
+   * Change the value of the variables that allow you to filter recipes
+   */
+  //Save the id of menu clicked
+  $('.menu__container a').on('click', function(e) {
+    menuSelected.value = e.currentTarget.id;
+  });
+
+  //Save the id of recipe clicked
+  $('a.card').on('click', function(e) {
+    $('#recipe').css('visibility', 'visible');
+    recipeSelected.value = e.currentTarget.id.slice(7);
+  });
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -63,7 +143,7 @@ import { smallScreen } from './variables';
    */
   let logo = document.querySelector('.svgLogo');
   logo.style.color = '#FFF';
-  if (!smallScreen) {
+  if (!mobileScreens) {
     logo.setAttribute('width', 300);
     logo.setAttribute('height', 125);
   }
@@ -77,7 +157,7 @@ import { smallScreen } from './variables';
 
   /**
    * Dropdown nav
-   */
+   *//*
   let buttonDropdown = document.querySelector('.dropdown__button');
   let navDropdown = document.querySelector('#nav-primary');
   let closeDropdown = document.querySelector('#close-dropwdown');
@@ -90,8 +170,9 @@ import { smallScreen } from './variables';
     navDropdown.style.width = '0%';
   });
 
-
-
+ */
+  
+  
 })();
 
 

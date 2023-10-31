@@ -8,13 +8,15 @@ import recipesJson from '../json/recipes.json';
 import { ref } from "vue";
 
 //variables
-let isReset = false;
 const searcher = ref();
 const categorySelected = ref([]);
+const menuSelected = ref();
+const recipeSelected = ref();
 const urlImages = "https://raw.githubusercontent.com/mherrerabl/UOC_Eines_HTML_CSS_II_PAC1/main/src/assets/images/recipes/";
 const mobileWidth = 420;
 const tabletWidth = 800;
-let smallScreen = window.screen.width > tabletWidth ? false : true;
+let mobileScreens = window.screen.width > mobileWidth ? false : true;
+let tabletScreens = window.screen.width > tabletWidth ? false : true
 
-export { categoriesJson, categorySelected, isReset, measuresJson, menuJson, mobileWidth, recipesJson, searcher, smallScreen, tabletWidth, urlImages };
+export { categoriesJson, categorySelected, measuresJson, menuJson, menuSelected, mobileScreens, mobileWidth, recipeSelected, recipesJson, searcher, tabletScreens, tabletWidth, urlImages };
 

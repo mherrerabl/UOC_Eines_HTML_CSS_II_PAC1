@@ -16,7 +16,7 @@
 import { ref, watch } from "vue";
 
 //Variables
-import { categoriesJson, categorySelected } from '../../assets/scripts/variables';
+import { categoriesJson, categorySelected } from './../../../assets/scripts/variables';
 
 
 export default {
