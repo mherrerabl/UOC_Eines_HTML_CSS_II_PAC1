@@ -26,7 +26,7 @@
 
 .center-content--padding-0 {
     @extend %center-container;
-    padding: 0px;
+    padding: 0;
 }
 
 
@@ -43,7 +43,7 @@
 
 
 /*-------------------------------*\
-  Blank space 
+  Blank space
 \*-------------------------------*/
 .blank-space--bottom-15 {
     margin-bottom: 15px;
@@ -78,8 +78,8 @@
   NAV LAYOUT
 \*------------------------------------*/
 nav {
-    background-color: $color-secundary;
     height: 50px;
+    background-color: $color-secundary;
 
     .nav-primary {
         position: relative;
@@ -147,7 +147,7 @@ nav {
 /*------------------------------------*\
   RECIPE LIST LAYOUT
 \*------------------------------------*/
-.list__container{
+.list__container {
     display: grid;
     grid-template-columns: 1fr;
     gap: 25px;
@@ -176,7 +176,7 @@ nav {
     padding: 10px;
 
     @media (min-width: $tabletWidth) {
-        padding: 15px; 
+        padding: 15px;
     }
 }
 
@@ -185,6 +185,6 @@ nav {
     padding-top: 100px;
 
     @media (min-width: $tabletWidth) {
-       padding: 100px 50px; 
+       padding: 100px 50px;
     }
 }

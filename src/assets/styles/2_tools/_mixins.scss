@@ -1,19 +1,8 @@
-@use "sass:map";
+@use 'sass:map';
 
-@mixin text($font: $font-family--text, $size: 1.8rem, $color: $color-black, $weight: 'regular') {
+@mixin text($font: $font-family--text, $size: 1.8rem, $weight: 'regular', $color: $color-black) {
     font-family: $font;
     font-size: $size;
-    color: $color;
     font-weight: map.get($font-family--weight, $weight);
-}
-
-@mixin link($color: $color-secundary, $background: none, $weight: 'regular') {
     color: $color;
-    background: $background;
-    font-weight: map.get($font-family--weight, $weight);
-}
-
-@mixin btn($color: $color-black, $background: $color-primary) {
-    color: $color;
-    background-color: $background;
 }

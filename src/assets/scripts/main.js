@@ -87,7 +87,7 @@ import { categorySelected, menuSelected, mobileScreens, searcher, tabletScreens,
     let sticky = $('#nav-primary');
     let scroll = $(window).scrollTop();
 
-    (scroll >= stickyOffset) ? sticky.addClass('searcherFixed') : sticky.removeClass('searcherFixed');
+    (scroll >= stickyOffset) ? sticky.addClass('searcher--state-fixed') : sticky.removeClass('searcher--state-fixed');
   });
 
 

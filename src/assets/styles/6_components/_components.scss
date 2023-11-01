@@ -17,7 +17,7 @@
 /*-------------------------------*\
   Logo
 \*-------------------------------*/
-.logo-link {
+.logo__link {
     display: block;
     width: fit-content;
     margin: 0 auto;
@@ -31,51 +31,40 @@
 /*--------------------------*\
   Recipes
 \*--------------------------*/
-.card__container{
-    height: 300px;
-    border-radius: 15px;
-    padding: 1.5rem;
-    background: white;
+.card__container {
     position: relative;
     display: flex;
     align-items: flex-end;
-    transition: 0.4s ease-out;
-    box-shadow: 0px 7px 10px rgba(black, 0.5);
+    height: 300px;
+    padding: 1.5rem;
     cursor: pointer;
+    background: $color-white;
+    border-radius: 15px;
+    box-shadow: 0 7px 10px rgba($color-black, 0.5);
+    transition: 0.4s ease-out;
         
-    &:hover {
-        transform: translateY(20px);
-    
-        &:before {
-            opacity: 1;
-        }
-        .card__information {
-            opacity: 1;
-            transform: translateY(0px);
-        }
-    }
     &:before {
-        content: "";
         position: absolute;
         top: 0;
         left: 0;
+        z-index: 2;
         display: block;
         width: 100%;
         height: 100%;
+        content: '';
+        background: rgba($color-black, 0.6);
         border-radius: 15px;
-        background: rgba(black, 0.6);
-        z-index: 2;
-        transition: 0.5s;
         opacity: 0;
+        transition: 0.5s;
     }
 
     img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
         position: absolute;
         top: 0;
         left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
         border-radius: 15px;
     }
 
@@ -83,29 +72,42 @@
         position: relative;
         z-index: 3;
         opacity: 0;
-        transform: translateY(30px);
         transition: 0.5s;
+        transform: translateY(30px);
     }
     .card__title {
-        margin: 0px;
-        @include text($size: 2.8rem, $color: $color-primary, $weight: 'bold');
+        margin: 0;
+        @include text($size: 2.8rem, $weight: 'bold', $color: $color-primary);
     }
     .card__category__text {
-        letter-spacing: 1px;
         margin-top: 8px;
         color: $color-white;
+        letter-spacing: 1px;
+    }
+
+    &:hover {
+        transform: translateY(20px);
+
+        &:before {
+            opacity: 1;
+        }
+        .card__information {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 }
 
-.card--state-active {
+.card--state-active.card--state-active {
     &:before {
         opacity: 1;
     }
     .card__information {
         opacity: 1;
-        transform: translateY(0px);
+        transform: translateY(0);
     }
 }
+
 
 
 /*--------------------------*\
@@ -114,18 +116,18 @@
 .menu__card {
     display: grid;
 
-    .menu__card__link {
+    &__link {
         position: relative;
-        border-radius: 15px;
         overflow: hidden;
+        border-radius: 15px;
     }
 
-    .menu__card__title__container {
+    &__title__container {
         @extend %center-content-vertical-hortizontal;
         width: 100%;
         height: 75px;
-        background-color: $color-primary;
         background: linear-gradient(to left, $color-primary 50%, $color-secundary 50%) right;
+        background-color: $color-primary;
         background-size: 200%;
         transition: 0.2s ease-out;
     }
@@ -139,13 +141,13 @@
         width: 100%;
         height: 100%;
     }
-}
 
-.menu__card:hover,
-.menu__card:focus { 
-    .menu__card__title__container {
-        background-position: left;
-        height: 150px;
+    &:hover,
+    &:focus {
+        .menu__card__title__container {
+            height: 150px;
+            background-position: left;
+        }
     }
 }
 
@@ -155,9 +157,9 @@
   Icons
 \*-------------------------------*/
 .fa-magnifying-glass {
-    color: $color-fourth;
     margin-right: 7px;
     font-size: 0.9em;
+    color: $color-fourth;
 }
 
 .fa-chevron-up {
@@ -170,47 +172,46 @@
   Input searcher
 \*-------------------------------*/
 .searcher {
-    display: flex;
     position: relative;
-    max-width: 500px;
+    display: flex;
     width: 95%;
-    
+    max-width: 500px;
 
     &__label {
-        display: block;
         position: absolute;
         top: 0;
+        left: 5px;
+        display: block;
+        padding: 0 5px;
         line-height: 40px;
         color: $color-fourth;
-        left: 5px;
-        padding: 0 5px;
+        pointer-events: none;
         transition: line-height 200ms ease-in-out,
             font-size 200ms ease-in-out,
             top 200ms ease-in-out;
-        pointer-events: none;
     }
 
     &__input {
         width: 100%;
         height: 40px;
+        padding: 0 10px;
         border: 1px solid $color-fourth;
         border-radius: 3px;
-        padding: 0 10px;
 
         &:not(:placeholder-shown),
         &:focus {
             +label {
-                background-color: $color-white;
-                line-height: 10px;
-                opacity: 1;
-                font-size: 1rem;
                 top: -5px;
+                line-height: 10px;
+                @include text($size: 1rem);
+                background-color: $color-white;
+                opacity: 1;
             }
         }
 
         &:focus {
-            outline: none;
             border: 2px solid $color-primary;
+            outline: none;
 
             +label,
             +label > i {
@@ -220,11 +221,11 @@
     }
 }
 
-.searcherFixed {
+.searcher--state-fixed {
     position: fixed;
     top: 0;
-    width: 100%;
     z-index: 10;
+    width: 100%;
 }
 
 
@@ -232,73 +233,74 @@
 /*-------------------------------*\
   Input checkbox
 \*-------------------------------*/
-.checkbox-container input[type="checkbox"] {
-    display: none;
-    visibility: hidden;
-}
+.checkbox {
+    &__label {
+        position: relative;
+        display: inline-flex;
+        padding-right: 15px;
+        padding-left: 35px;
+        line-height: 2.2;
+        cursor: pointer;
+        transition: 0.25s all ease;
 
-.checkbox-container label {
-    position: relative;
-    padding-left: 35px;
-    padding-right: 15px;
-    line-height: 2;
-    cursor: pointer;
-    display: inline-flex;
-}
+        &:before {
+            position: absolute;
+            top: 7px;
+            left: 6px;
+            z-index: -1;
+            display: block;
+            width: 20px;
+            height: 20px;
+            content: ' ';
+            border: 2px solid $color-fourth;
+            border-radius: 5px;
+        }
+        
+        &::before {
+            transition: 0.25s all ease;
+        }
+    }
+    
+    &__input {
+        display: none;
+        visibility: hidden;
 
-.checkbox-container label:before {
-    box-sizing: border-box;
-    content: " ";
-    position: absolute;
-    top: 7px;
-    left: 6px;
-    display: block;
-    width: 20px;
-    height: 20px;
-    border: 2px solid $color-fourth;
-    border-radius: 5px;
-    z-index: -1;
-}
+        &:checked + label {
+            padding-left: 30px;
+            color: $color-primary;
+        }
 
-.checkbox-container input[type=checkbox]:checked + label {
-    padding-left: 30px;
-    color: $color-primary;
+        &:checked + label:before {
+            top: 0;
+            width: 100%;
+            height: 35px;
+            background: $color-third;
+            border-color: $color-primary;
+        }
+    }
 }
-.checkbox-container input[type=checkbox]:checked + label:before {
-    top: 0;
-    width: 100%;
-    height: 35px;
-    background: $color-third;
-    border-color: $color-primary;
-}
-
-.checkbox-container label,
-.checkbox-container label::before {
-    transition: 0.25s all ease;
-}
-
 
 
 /*-------------------------------*\
   Float button
 \*-------------------------------*/
 #buttonTop {
-    display: none; 
-    position: fixed; 
-    bottom: 20px; 
-    right: 30px; 
-    z-index: 99; 
-    border: none; 
-    outline: none; 
-    background-color: $color-secundary; 
+    position: fixed;
+    right: 30px;
+    bottom: 20px;
+    z-index: 99;
+    display: none;
+    padding: 15px;
     color: $color-white;
     cursor: pointer;
-    padding: 15px; 
-    border-radius: 30px; 
-}
-  
-#buttonTop:hover {
-    background-color: $color-third; 
+    background-color: $color-secundary;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+
+    &:hover {
+        background-color: $color-third;
+    }
 }
 
 
@@ -322,16 +324,13 @@
     p,
     li {
         margin-bottom: 10px;
-    }
-
-    p {
         line-height: 2.8rem;
     }
 
     img {
+        display: block;
         width: 100%;
         max-width: 500px;
-        display: block;
         margin: 0 auto;
         border-radius: 15px;
     }
@@ -344,21 +343,22 @@
 /*------------------------------------*\
   FOOTER
 \*------------------------------------*/
-.footer-container {
+.footer {
     margin-top: 50px;
 
-    ul {
-        text-align: center;
+    &__list {
         padding-top: 25px;
         padding-bottom: 25px;
-    }
+        text-align: center;
+    
 
-    li {
-        color: $color-white;
-    }
+        &__element {
+            color: $color-white;
+        }
 
-    li:not(:last-child) {
-        margin-bottom: 15px;
+        &__element:not(:last-child) {
+            margin-bottom: 15px;
+        }
     }
 }
 
@@ -371,27 +371,13 @@
 \*------------------------------------*/
 .paper {
     margin: 25px auto;
-    box-shadow: 4px 4px 0 $color-fourth;
-    background-image: 
-      linear-gradient(
-        90deg,
-        #fff 12px, 0,
-        $color-fourth 15px, 0,
-        $color-transparent 20px, 0,
-        #fff 100%
-      ),
-      radial-gradient(
-        circle closest-side,
-        rgba(255,255,255,0) 88%,
-        #fff 100%
-      ),
-      radial-gradient(
-        circle at 22px 8px,
-        $color-transparent 40%,
-        $color-fourth 40%,
-        $color-fourth 100%
-      );
-    background-size: 32px 8px, 32px 16px, 32px 16px;
+    background-image: linear-gradient(90deg, $color-white 12px, 0,
+        $color-fourth 15px, 0, $color-transparent 20px, 0, $color-white 100%),
+      radial-gradient(circle closest-side, rgba(255,255,255,0) 88%, $color-white 100%),
+      radial-gradient(circle at 22px 8px, $color-transparent 40%,
+        $color-fourth 40%, $color-fourth 100%);
     background-repeat: space no-repeat;
     background-position: center top, center 6px, center 6px;
+    background-size: 32px 8px, 32px 16px, 32px 16px;
+    box-shadow: 4px 4px 0 $color-fourth;
 }
