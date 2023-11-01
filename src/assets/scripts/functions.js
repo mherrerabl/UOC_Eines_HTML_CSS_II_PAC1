@@ -64,8 +64,7 @@ const filterByText = (name) => {
 
 //Executate the functions filters and return and object of recipes
 const filteredRecipes = () => {
-    recipes = recipesJson;
-    recipes = sortRecipes();
+    let recipes = sortRecipes();
 
     if (menuSelected.value !== undefined) {
         recipes = filterByMenu(menuSelected.value);
@@ -81,6 +80,7 @@ const filteredRecipes = () => {
 
     return recipes;
 }
+
 
 
 /**
