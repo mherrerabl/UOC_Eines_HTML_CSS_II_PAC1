@@ -33,30 +33,11 @@ export default {
   props: ["recipe"],
   setup(props) {
     function clicked() {
-      console.log("CLICK");
       recipeSelected.value = props.recipe.id;
     }
     
     return { urlImages, searchCategory, capitalize, clicked };
   },
-};
-
-/*
-<router-link :to="'/recetario/'+recipe.id" class="card">
-        <figure class="card__container-title">  
-          <picture>
-            <img :src="urlImages+'jpg/'+recipe.id+'/img_'+recipe.id+'_690.jpg'"
-                :srcset="urlImages+'webp/'+recipe.id+'/img_'+recipe.id+'_420.webp 420w,'+
-                        urlImages+'webp/'+recipe.id+'/img_'+recipe.id+'_690.webp 690w,'+
-                        urlImages+'webp/'+recipe.id+'/img_'+recipe.id+'_900.webp 900w'"
-                sizes="(max-width: 419px) 100vw,
-                        (min-width: 799px) 50vw,
-                        (min-width: 800px) 25vw"
-              :alt="recipe.name">
-          </picture>
-        <figcaption class="title--level-third">{{ recipe.name }}</figcaption>
-        </figure>
-    </router-link>
-*/
+}; 
 </script>
 

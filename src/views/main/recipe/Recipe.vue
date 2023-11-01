@@ -45,15 +45,12 @@ export default {
         let recipe = ref(searchRecipe(recipeSelected.value));
 
         watch(recipeSelected, () => {
-            console.log("AAAAAAA");
             recipe.value = searchRecipe(recipeSelected.value);
-                  console.log(recipe.value);
-      document.getElementById('recipe').style.visibility = 'visible';
-      //$('#recipe').css('visibility', 'visible');
+            document.getElementById('recipe').style.visibility = 'visible';
     
-    $('html, body').animate({
-        scrollTop:  $( '#recipe' ).offset().top - 100
-    }, 500);
+            $('html, body').animate({
+                scrollTop:  $( '#recipe' ).offset().top - 100
+            }, 500);
         });
 
         return { recipe, searchMenu, searchCategory, urlImages, searchMeasure, recipeSelected }

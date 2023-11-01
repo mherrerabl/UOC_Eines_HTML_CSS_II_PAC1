@@ -49,26 +49,6 @@ import { categorySelected, menuSelected, mobileScreens, searcher, tabletScreens,
     return false;
   });
 
-  //It moves to Recipe section
-  $('#news__container a').on('click', function(){
-    $('html, body').animate({
-        scrollTop:  $( '#recipe' ).offset().top - 100
-    }, 500);
-    return false;
-  });
-/*
-  $('#recipes a').on('click', function(e){
-    
-    recipeSelected.value = e.currentTarget.id.slice(7);
-    $('#recipe').css('visibility', 'visible');
-    
-    $('html, body').animate({
-        scrollTop:  $( '#recipe' ).offset().top - 100
-    }, 500);
-    
-    return false;
-  });
-*/
   //When users click input searcher, it moves to the section of the page
   $('.nav-primary__content input').on('click', function(){
     $('html, body').animate({
