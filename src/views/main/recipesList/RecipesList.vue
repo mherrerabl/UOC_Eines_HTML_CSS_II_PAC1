@@ -26,15 +26,15 @@ import CategoriesList from './../components/CategoriesList.vue';
 import { categorySelected, searcher, tabletScreens, mobileScreens, menuSelected } from './../../../assets/scripts/variables';
 
 //Functions
-import { filteredRecipes } from './../../../assets/scripts/functions';
+import { filteredRecipes } from './../../../assets/scripts/functionsVue';
 
 export default {
     components: { Card, CategoriesList },
     setup() {
-        let title = ref();
+        //let title = ref();
         let recipes = ref([]);
 
-        title.value = (menuSelected.value !== undefined) ? capitalize(menuSelected.value) : 'Recetario';
+        /*title.value = (menuSelected.value !== undefined) ? capitalize(menuSelected.value) : 'Recetario';
         const changeTitle = () => {
             if (searcher.value === undefined) {                
                 title.value = (menuSelected.value !== undefined) ? capitalize(menuSelected.value) : 'Recetario';
@@ -43,12 +43,12 @@ export default {
             } else {
                 title.value = searcher.value;
             }
-        }
+        }*/
 
-        categorySelected.value = undefined;
+        //categorySelected.value = undefined;
         recipes.value = filteredRecipes();
 
-        watch(searcher, changeTitle);
+        //watch(searcher, changeTitle);
         watch(searcher, () => {
             recipes.value = filteredRecipes();
         });
@@ -56,13 +56,13 @@ export default {
             recipes.value = filteredRecipes();
         });
 
-        watch(menuSelected, changeTitle);
+        //watch(menuSelected, changeTitle);
         watch(menuSelected, () => {
             recipes.value = filteredRecipes();
         });
 
   
-        return { filteredRecipes, title, categorySelected, recipes, tabletScreens, mobileScreens }
+        return { filteredRecipes, categorySelected, recipes, tabletScreens, mobileScreens }
     }
 }
 </script>

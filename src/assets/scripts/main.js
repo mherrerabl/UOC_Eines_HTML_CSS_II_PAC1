@@ -7,7 +7,7 @@
 // import SomeModule from 'some-node-module';
 
 import $ from 'jquery';
-import { createApp } from 'vue';
+import { capitalize, createApp } from 'vue';
 
 /**
  * Import components
@@ -20,7 +20,7 @@ import RecipesList from './../../views/main/recipesList/RecipesList.vue';
 /**
  * Import variables
  */
-import { categorySelected, menuSelected, mobileScreens, recipeSelected, tabletScreens } from './variables';
+import { categorySelected, menuSelected, mobileScreens, searcher, tabletScreens, title } from './variables';
 
 /**
  * Write any other JavaScript below
@@ -38,8 +38,6 @@ import { categorySelected, menuSelected, mobileScreens, recipeSelected, tabletSc
 
 
 
-
-
   /**
    * Scrolls
    */
@@ -51,21 +49,26 @@ import { categorySelected, menuSelected, mobileScreens, recipeSelected, tabletSc
     return false;
   });
 
-
+  //It moves to Recipe section
   $('#news__container a').on('click', function(){
     $('html, body').animate({
         scrollTop:  $( '#recipe' ).offset().top - 100
     }, 500);
     return false;
   });
-
-  $('#recipes a').on('click', function(){
+/*
+  $('#recipes a').on('click', function(e){
+    
+    recipeSelected.value = e.currentTarget.id.slice(7);
+    $('#recipe').css('visibility', 'visible');
+    
     $('html, body').animate({
         scrollTop:  $( '#recipe' ).offset().top - 100
     }, 500);
+    
     return false;
   });
-
+*/
   //When users click input searcher, it moves to the section of the page
   $('.nav-primary__content input').on('click', function(){
     $('html, body').animate({
@@ -115,6 +118,7 @@ import { categorySelected, menuSelected, mobileScreens, recipeSelected, tabletSc
   //Save the id of menu clicked
   $('.menu__container a').on('click', function(e) {
     menuSelected.value = e.currentTarget.id;
+    changeTitle(title);
   });
 
   //Save array of categories selected
@@ -125,12 +129,18 @@ import { categorySelected, menuSelected, mobileScreens, recipeSelected, tabletSc
   });
 
   //Save the id of recipe clicked
+  /*
   $('a.card').on('click', function(e) {
-    $('#recipe').css('visibility', 'visible');
+  
     recipeSelected.value = e.currentTarget.id.slice(7);
+    $('#recipe').css('visibility', 'visible');
+  });*/
+
+
+ //Save array of categories selected
+  $('.searcher__input').on('input', function() {
+    changeTitle();
   });
-
-
   
 
 
@@ -180,5 +190,15 @@ import { categorySelected, menuSelected, mobileScreens, recipeSelected, tabletSc
 
     return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
   }
-  
+
+  //Change title
+  function changeTitle(title) {
+    if (searcher.value === undefined || searcher.value === '') {    
+        title = (menuSelected.value !== undefined) ? capitalize(menuSelected.value) : 'Recetario';
+    } else {
+        title = searcher.value;
+    }
+    $('#recipes__title').text(title);
+}
+
 })();

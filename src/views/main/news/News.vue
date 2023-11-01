@@ -26,7 +26,7 @@ import 'swiper/swiper.scss';
 import { tabletScreens, mobileScreens } from './../../../assets/scripts/variables';
 
 //Functions
-import { sortRecipes } from './../../../assets/scripts/functions';
+import { sortRecipes } from './../../../assets/scripts/functionsVue';
 
 
 export default {

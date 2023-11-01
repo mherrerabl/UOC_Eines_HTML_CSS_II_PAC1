@@ -35,17 +35,25 @@
 import { ref, watch } from "vue";
 
 //Variables
-import { urlImages, recipeSelected } from "./../../../assets/scripts/variables";
+import { $, urlImages, recipeSelected } from "./../../../assets/scripts/variables";
 
 //Functions
-import { searchCategory, searchMeasure, searchMenu, searchRecipe } from './../../../assets/scripts/functions';
+import { searchCategory, searchMeasure, searchMenu, searchRecipe } from './../../../assets/scripts/functionsVue';
 
 export default {
     setup() {
         let recipe = ref(searchRecipe(recipeSelected.value));
 
         watch(recipeSelected, () => {
+            console.log("AAAAAAA");
             recipe.value = searchRecipe(recipeSelected.value);
+                  console.log(recipe.value);
+      document.getElementById('recipe').style.visibility = 'visible';
+      //$('#recipe').css('visibility', 'visible');
+    
+    $('html, body').animate({
+        scrollTop:  $( '#recipe' ).offset().top - 100
+    }, 500);
         });
 
         return { recipe, searchMenu, searchCategory, urlImages, searchMeasure, recipeSelected }

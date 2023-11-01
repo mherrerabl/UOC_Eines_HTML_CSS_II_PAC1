@@ -1,5 +1,5 @@
 <template>
-  <a class="card" :id="'recipe_'+recipe.id">
+  <a class="card" :id="'recipe_'+recipe.id" @click="clicked">
     <div class="card__container">  
           <picture>
             <img :src="urlImages+'jpg/'+recipe.id+'/img_'+recipe.id+'_690.jpg'"
@@ -23,15 +23,21 @@
 
 <script>
 //Variables
-import { urlImages } from "./../../../assets/scripts/variables";
+import { urlImages, recipeSelected } from "./../../../assets/scripts/variables";
 
 //Functions
-import { searchCategory, capitalize } from "./../../../assets/scripts/functions";
+import { searchCategory, capitalize } from "./../../../assets/scripts/functionsVue";
+
 
 export default {
   props: ["recipe"],
   setup(props) {
-    return { urlImages, searchCategory, capitalize };
+    function clicked() {
+      console.log("CLICK");
+      recipeSelected.value = props.recipe.id;
+    }
+    
+    return { urlImages, searchCategory, capitalize, clicked };
   },
 };
 

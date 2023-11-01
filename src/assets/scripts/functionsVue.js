@@ -117,7 +117,7 @@ const searchMeasure = (num, typeLongWord, theNumberWord) => {
 
 //Receive a number (id) and return an recipe object
 const searchRecipe = (idParam) => {
-    return (recipesJson.filter(({id}) => id.toString() === idParam))[0];
+    return (recipesJson.filter(({id}) => id === idParam))[0];
 }
 
 export { capitalize, changeRoute, filteredRecipes, reset, searchCategory, searchMeasure, searchMenu, searchRecipe, sortRecipes };
