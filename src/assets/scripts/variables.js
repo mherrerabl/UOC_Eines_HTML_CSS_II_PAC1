@@ -9,7 +9,7 @@ import { ref } from "vue";
 
 //variables
 const searcher = ref();
-const categorySelected = ref([]);
+const categorySelected = ref();
 const menuSelected = ref();
 const recipeSelected = ref();
 const urlImages = "https://raw.githubusercontent.com/mherrerabl/UOC_Eines_HTML_CSS_II_PAC1/main/src/assets/images/recipes/";

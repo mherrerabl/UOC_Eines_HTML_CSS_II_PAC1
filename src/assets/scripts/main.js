@@ -33,7 +33,7 @@ import { menuSelected, mobileScreens, recipeSelected, tabletScreens } from './va
    */
   createApp(NavPrimary).mount('#nav-primary');
   createApp(News).mount('#news__container');
-  createApp(RecipesList).mount('#recipes');
+  createApp(RecipesList).mount('#recipes__list');
   createApp(Recipe).mount('#recipe');
 
 
@@ -115,6 +115,14 @@ import { menuSelected, mobileScreens, recipeSelected, tabletScreens } from './va
   //Save the id of menu clicked
   $('.menu__container a').on('click', function(e) {
     menuSelected.value = e.currentTarget.id;
+  });
+
+  //Save array of categories selected
+  $('.category__form input').on('click', function(e) {
+    var searchIDs = $("input:checkbox:checked").map(function(){
+      return $(this).val();
+    }).get(); // <----
+    console.log(searchIDs);
   });
 
   //Save the id of recipe clicked
