@@ -10,24 +10,29 @@ const compareNumbers = (num1, num2) => {
 }
 
 //Look for in the arrayObj if there are any param 'name' that matches with the string 'text'.
-const compareArrayString = (id, text, arrayObj) => {
+const compareMenus = (id, text, arrayObj) => {
     let array = arrayObj.filter(obj => obj.name === text )[0];
     return compareNumbers(array.id, id);
 } 
 
-//Look for in the arrayObj if there are any param 'name' that matches with some string of arrayString.
+//Look for in the arrayObjCategories if there are any param 'name' that matches with some string of arrayObjSelected.
 //If not found, return false.
 //If there are any matches, iterated the result (variable newArrayObj) to looking for if param 'id' match with 'id' of newArrayObj.
 //If found, return true.
-const compareArrays = (id, arrayString, arrayObj) => {
-    let newArrayObj = arrayObj.filter(({ name }) => 
-        arrayString.some(x => x === name)
+const compareCategories = (id, arrayObjSelected, arrayObjCategories) => {
+    let newArrayObj = arrayObjCategories.filter(({ name }) => 
+        arrayObjSelected.some(x => {
+            if (x == "Mediterranea") { x = "mediterránea"; }
+            return x === name.toLowerCase();
+        })
     );
 
-    if (newArrayObj.length <= 0) { return true; }
+    if (newArrayObj.length <= 0) { return true; } //Allow show all recipes
 
     for (const item of newArrayObj) {
-        return compareNumbers(item.id, id)
+        if(compareNumbers(item.id, id)){
+            return true;
+        }
     }            
     return false;
 }
@@ -44,16 +49,16 @@ const sortRecipes = () => {
 //Return array of objects that recipes 'menu' match with param 'menu' (string)
 const filterByMenu = (recipes, menu) => {  
     return recipes.filter((recipe) => {
-        return compareArrayString(recipe.menu, menu, menuJson); 
+        return compareMenus(recipe.menu, menu, menuJson); 
     });
 
 }
 
 //Return array of objects that recipes 'category' match with param 'category'
-const filterByCategory = (recipes, category) => {
+const filterByCategory = (recipes, categories) => {
     return recipes.filter((recipe) => {
-        return compareArrays(recipe.category, category, categoriesJson);
-    })
+        return compareCategories(recipe.category, categories, categoriesJson);
+    });
 }
 
 //Return array of objects that recipes 'name' match with param 'name'
@@ -70,9 +75,12 @@ const filteredRecipes = () => {
         recipes = filterByMenu(recipes, menuSelected.value);
     }
 
-    if (categorySelected.value !== undefined && categorySelected.value !== '') {
-        recipes = filterByCategory(recipes, categorySelected.value);      
+    if(categorySelected.value !== undefined) {
+        if (categorySelected.value.length > 0) {
+            recipes = filterByCategory(recipes, categorySelected.value);      
+        }
     }
+    
 
     if (searcher.value !== undefined && searcher.value !== '') {
         recipes = filterByText(searcher.value);

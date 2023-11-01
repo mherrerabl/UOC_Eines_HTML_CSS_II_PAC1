@@ -20,7 +20,7 @@ import RecipesList from './../../views/main/recipesList/RecipesList.vue';
 /**
  * Import variables
  */
-import { menuSelected, mobileScreens, recipeSelected, tabletScreens } from './variables';
+import { categorySelected, menuSelected, mobileScreens, recipeSelected, tabletScreens } from './variables';
 
 /**
  * Write any other JavaScript below
@@ -119,10 +119,9 @@ import { menuSelected, mobileScreens, recipeSelected, tabletScreens } from './va
 
   //Save array of categories selected
   $('.category__form input').on('click', function(e) {
-    var searchIDs = $("input:checkbox:checked").map(function(){
+    categorySelected.value = $("input:checkbox:checked").map(function(){
       return $(this).val();
-    }).get(); // <----
-    console.log(searchIDs);
+    }).get();
   });
 
   //Save the id of recipe clicked
