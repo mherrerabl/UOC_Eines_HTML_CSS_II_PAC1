@@ -42,7 +42,7 @@ const sortRecipes = () => {
 }
 
 //Return array of objects that recipes 'menu' match with param 'menu' (string)
-const filterByMenu = (menu) => {  
+const filterByMenu = (recipes, menu) => {  
     return recipes.filter((recipe) => {
         return compareArrayString(recipe.menu, menu, menuJson); 
     });
@@ -50,9 +50,9 @@ const filterByMenu = (menu) => {
 }
 
 //Return array of objects that recipes 'category' match with param 'category'
-const filterByCategory = (category) => {
+const filterByCategory = (recipes, category) => {
     return recipes.filter((recipe) => {
-        return compareArrays(recipe.category, category.value, categoriesJson);
+        return compareArrays(recipe.category, category, categoriesJson);
     })
 }
 
@@ -67,11 +67,11 @@ const filteredRecipes = () => {
     let recipes = sortRecipes();
 
     if (menuSelected.value !== undefined) {
-        recipes = filterByMenu(menuSelected.value);
+        recipes = filterByMenu(recipes, menuSelected.value);
     }
 
     if (categorySelected.value !== undefined && categorySelected.value !== '') {
-        recipes = filterByCategory(categorySelected);      
+        recipes = filterByCategory(recipes, categorySelected.value);      
     }
 
     if (searcher.value !== undefined && searcher.value !== '') {

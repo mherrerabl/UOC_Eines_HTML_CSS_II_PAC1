@@ -12,21 +12,21 @@
 
 <script>
 //Components
-import Card from "./../components/Card.vue";
+import Card from './../components/Card.vue';
 
 //SwiperJS
-import SwiperCore, { A11y, Pagination } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/vue";
+import SwiperCore, { A11y, Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/vue';
 
 //Swiper styles
-import "swiper/components/pagination/pagination.scss";
-import "swiper/swiper.scss";
+import 'swiper/components/pagination/pagination.scss';
+import 'swiper/swiper.scss';
 
 //Variables
-import { tabletScreens, mobileScreens } from "./../../../assets/scripts/variables";
+import { tabletScreens, mobileScreens } from './../../../assets/scripts/variables';
 
 //Functions
-import { sortRecipes } from "./../../../assets/scripts/functions";
+import { sortRecipes } from './../../../assets/scripts/functions';
 
 
 export default {

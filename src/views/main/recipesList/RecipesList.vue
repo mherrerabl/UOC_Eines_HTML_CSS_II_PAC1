@@ -1,22 +1,21 @@
 
 <template>
-    <div class="center-content--padding-25-50">
+    <!--<div class="center-content--padding-25-50">
         <h2 class="title--level-secundary blank-space--bottom-15">{{ title }}</h2>
         <CategoriesList/>
-
+-->
         <ul v-if="recipes.length > 0" class="list__container">
             <li v-for="(recipe) in recipes" :key="recipe.id">
                 <card :recipe="recipe"></card>
             </li>
         </ul>
         <p v-else>No hemos encontrado ninguna receta de esa categoría.</p>
-    </div>
+   <!-- </div>-->
 </template>
 
 <script>
 //Functions Vue
 import { capitalize, ref, watch } from 'vue';
-import { useRoute } from 'vue-router';
 
 
 //Components
@@ -32,7 +31,6 @@ import { filteredRecipes } from './../../../assets/scripts/functions';
 export default {
     components: { Card, CategoriesList },
     setup() {
-        let route = useRoute();
         let title = ref();
         let recipes = ref([]);
 
