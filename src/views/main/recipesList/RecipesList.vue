@@ -1,16 +1,11 @@
 
 <template>
-    <!--<div class="center-content--padding-25-50">
-        <h2 class="title--level-secundary blank-space--bottom-15">{{ title }}</h2>
-        <CategoriesList/>
--->
-        <ul v-if="recipes.length > 0" class="list__container">
-            <li v-for="(recipe) in recipes" :key="recipe.id">
-                <card :recipe="recipe"></card>
-            </li>
-        </ul>
-        <p v-else>No hemos encontrado ninguna receta de esa categoría.</p>
-   <!-- </div>-->
+    <ul v-if="recipes.length > 0" class="list__container">
+        <li v-for="(recipe) in recipes" :key="recipe.id">
+            <card :recipe="recipe"></card>
+        </li>
+    </ul>
+    <p v-else>No hemos encontrado ninguna receta de esa categoría.</p>
 </template>
 
 <script>

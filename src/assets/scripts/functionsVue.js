@@ -22,7 +22,6 @@ const compareMenus = (id, text, arrayObj) => {
 const compareCategories = (id, arrayObjSelected, arrayObjCategories) => {
     let newArrayObj = arrayObjCategories.filter(({ name }) => 
         arrayObjSelected.some(x => {
-            if (x == "mediterranea") { x = "mediterránea"; }
             return x === name.toLowerCase();
         })
     );

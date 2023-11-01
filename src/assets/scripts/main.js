@@ -50,7 +50,7 @@ import { categorySelected, menuSelected, mobileScreens, searcher, tabletScreens,
   });
 
   //When users click input searcher, it moves to the section of the page
-  $('.nav-primary__content input').on('click', function(){
+  $('.nav-primary__searcher input').on('click', function(){
     $('html, body').animate({
         scrollTop: $('#recipes').offset().top - 50
     }, 500);

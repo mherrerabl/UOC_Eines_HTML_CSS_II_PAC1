@@ -1,5 +1,5 @@
 <template>
-  <a class="card" :id="'recipe_'+recipe.id" @click="clicked">
+  <a :id="'recipe_'+recipe.id" class="card" @click="clicked">
     <div class="card__container">  
           <picture>
             <img :src="urlImages+'jpg/'+recipe.id+'/img_'+recipe.id+'_690.jpg'"
