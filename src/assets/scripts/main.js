@@ -97,6 +97,7 @@ import { categorySelected, menuSelected, mobileScreens, searcher, tabletScreens,
    */
   //Save the id of menu clicked
   $('.menu__container a').on('click', function(e) {
+    searcher.value = undefined;
     menuSelected.value = e.currentTarget.id;
     changeTitle(title);
   });
@@ -107,15 +108,6 @@ import { categorySelected, menuSelected, mobileScreens, searcher, tabletScreens,
       return $(this).val();
     }).get();
   });
-
-  //Save the id of recipe clicked
-  /*
-  $('a.card').on('click', function(e) {
-  
-    recipeSelected.value = e.currentTarget.id.slice(7);
-    $('#recipe').css('visibility', 'visible');
-  });*/
-
 
  //Save array of categories selected
   $('.searcher__input').on('input', function() {
