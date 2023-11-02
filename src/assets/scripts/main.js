@@ -21,7 +21,7 @@ import RecipesList from './../../views/main/recipes/RecipesList.vue';
 import { $, categorySelected, menuSelected, mobileScreens, searcher, tabletScreens, title } from './variables';
 
 /**
- * Import variables
+ * Import functions
  */
 import { capitalize, createApp } from './functionsVue';
 
@@ -123,7 +123,7 @@ import { capitalize, createApp } from './functionsVue';
   //Focus card when scroll on small screens
   $(window).on('scroll', function () {
     if(mobileScreens) {
-      $('.card').each(function () {
+      $('.card__container').each(function () {
           if (isOnViewport(this) === true) {
               $(this).addClass('card--state-hover');
           } else {
@@ -145,7 +145,7 @@ import { capitalize, createApp } from './functionsVue';
     let sticky = $('#nav-primary');
     let scroll = $(window).scrollTop();
 
-    (scroll >= stickyOffset) ? sticky.addClass('searcher--state-fixed') : sticky.removeClass('searcher--state-fixed');
+    (scroll >= stickyOffset) ? sticky.addClass('searcher--position-fixed') : sticky.removeClass('searcher--position-fixed');
   });
 
 

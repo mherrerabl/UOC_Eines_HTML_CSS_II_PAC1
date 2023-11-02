@@ -115,101 +115,21 @@
     },
     {
         "id": 3,
-        "name": "Albóndigas en salsa",
+        "name": "Porras",
         "menu": 3,
-        "diners": 6,
-        "elaboration_time": "60 minutos",
+        "diners": 4,
+        "elaboration_time": "",
         "category": 2,
-        "publication_date": "17/02/2022",
+        "publication_date": "09/01/2023",
         "ingredients":  [
             {
-                "name": "carne picada de cerdo",
-                "quantity": 250,
-                "measure": 9
-            },
-            {
-                "name": "carne picada de ternera",
-                "quantity": 250,
-                "measure": 9
-            },
-            {
-                "name": "pan rallado",
-                "quantity": 2,
-                "measure": 3
-            },
-            {
-                "name": "huevo",
-                "quantity": 1,
-                "measure": 0
-            },
-            {
-                "name": "ajos",
-                "quantity": 2,
-                "measure": 0
-            },
-            {
-                "name": "perejil",
-                "quantity": 2,
-                "measure": 4
-            },
-            {
-                "name": "leche",
-                "quantity": 0.5,
-                "measure": 2
-            },
-            {
-                "name": "cebolla pequeña",
-                "quantity": 1,
-                "measure": 0
-            },
-            {
-                "name": "tomate triturado",
-                "quantity": 3,
-                "measure": 3
-            },
-            {
-                "name": "caldo de carne",
-                "quantity": 1,
-                "measure": 6
-            },
-            {
-                "name": "ramita de tomillo",
-                "quantity": 1,
-                "measure": 0
-            },
-            {
-                "name": "harina",
-                "quantity": 3,
-                "measure": 4
-            },
-            {
-                "name": "aceite de oliva",
-                "quantity": 1,
+                "name": "",
+                "quantity": 0,
                 "measure": 1
-            },
-            {
-                "name": "almendras",
-                "quantity": 8,
-                "measure": 0
-            },
-            {
-                "name": "rebanada de pan tostado",
-                "quantity": 1,
-                "measure": 0
             }
         ],
         "description": [
-            "Mezclar las dos carnes picadas junto con el pan rallado, el huevo, la leche, un ajo y un poco de perejil, los dos bien picados, sal y pimienta. Dejar reposar 15 minutos.",
-            "Darle forma a las albóndigas, harinar y freir en una sartén con el aceite descrito.",
-            "A continuación, colar parte del aceite en una olla o sartén para hacer la salsa. No es necesario todo el aceite, solo para cubrir.",
-            "Pochar la cebolla durante 5-10 minutos a fuego bajo.",
-            "Verter el tomate y freir durante 5 minutos.",
-            "Agregar el caldo y la ramita de tomillo. Dejar hervir unos 5 minutos.",
-            "Añadir las albóndigas y dejar hervir unos 10 minutos.",
-            "De mientras hacer una picada en un mortero, con un ajo pequeño, una cucharada de perejil, las almendras y el pan tostado.",
-            "Después añadir en la picada un poco del la salsa que se está haciendo. Añadir la mezcla en la olla de las albóndigas.",
-            "Si la salsa no espesa añadir una cucharada de harina en un vaso junto tres desdos de agua.",
-            "Finalmente, rectificar de sal y pimienta."
+            ""
         ]
     },
     {
@@ -572,25 +492,6 @@
             "Después de 5 minutos revisar si la base ya está hecha. Si es así, dar la vuelta a la pizza y bajar el fuego a 5.",
             "Añadir a la base el tomate, el orégano y la mozzarella. Se puede añadir cualquier otro ingrediente.",
             "Por último, tapar y esperar de 5 a 10 minutos que la pizza este totalmente hecha."
-        ]
-    },
-    {
-        "id": 10,
-        "name": "Porras",
-        "menu": 3,
-        "diners": 4,
-        "elaboration_time": "",
-        "category": 2,
-        "publication_date": "09/01/2023",
-        "ingredients":  [
-            {
-                "name": "",
-                "quantity": 0,
-                "measure": 1
-            }
-        ],
-        "description": [
-            ""
         ]
     }
 ]
