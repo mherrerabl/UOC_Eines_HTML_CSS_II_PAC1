@@ -49,6 +49,7 @@ import { capitalize, createApp } from './functionsVue';
     searcher.value = undefined;
     menuSelected.value = e.currentTarget.id;
     changeTitle(title);
+    $('.category').css('display', 'block');
   });
 
   //Save array of categories selected
@@ -62,6 +63,11 @@ import { capitalize, createApp } from './functionsVue';
   $('.searcher__input').on('input', function() {
     searcher.value = $(this).val();
     changeTitle();
+    if (searcher.value == '') {
+      $('.category').css('display', 'block');
+    } else {
+      $('.category').css('display', 'none');
+    }
   });
 
 
@@ -101,7 +107,7 @@ import { capitalize, createApp } from './functionsVue';
     $('html, body').animate({
         scrollTop: $('#recipes').offset().top - 50
     }, 500);
-
+    $('.category').css('display', 'none');
   });
 
   //Button moves you to the top of the page
