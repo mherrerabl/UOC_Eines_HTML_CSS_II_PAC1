@@ -14,7 +14,7 @@ import { capitalize, createApp } from 'vue';
  */
 import News from './../../views/main/news/News.vue';
 import Recipe from './../../views/main/recipe/Recipe.vue';
-import RecipesList from './../../views/main/recipesList/RecipesList.vue';
+import RecipesList from './../../views/main/recipes/RecipesList.vue';
 
 /**
  * Import variables
@@ -33,6 +33,50 @@ import { categorySelected, menuSelected, mobileScreens, searcher, tabletScreens,
   createApp(News).mount('#news__container');
   createApp(RecipesList).mount('#recipes__list');
   createApp(Recipe).mount('#recipe');
+
+
+
+  /**
+   * Change the value of the variables that allow you to filter recipes
+   */
+  //Save the id of menu clicked
+  $('.menu__container a').on('click', function(e) {
+    searcher.value = undefined;
+    menuSelected.value = e.currentTarget.id;
+    changeTitle(title);
+  });
+
+  //Save array of categories selected
+  $('.category__form input').on('click', function(e) {
+    categorySelected.value = $("input:checkbox:checked").map(function(){
+      return $(this).val();
+    }).get();
+  });
+
+ //Save input value and change title
+  $('.searcher__input').on('input', function() {
+    searcher.value = $(this).val();
+    changeTitle();
+  });
+
+
+
+  /**
+   * Logo
+   */
+  $('.svgLogo').css('color', '#FFF');
+
+  if (!tabletScreens) {
+    $('.svgLogo').attr('width', '300');
+    $('.svgLogo').attr('height', '125');
+  }
+
+  $('.svgLogo').on('mouseenter', function() {
+    $('.svgLogo').css('color', '#4F4A45')
+  });
+  $('.svgLogo').on('mouseleave', function() {
+    $(this).css('color', '#FFF')
+  });
 
 
 
@@ -71,7 +115,18 @@ import { categorySelected, menuSelected, mobileScreens, searcher, tabletScreens,
     }
   });
 
-
+  //Focus card when scroll on small screens
+  $(window).on('scroll', function () {
+    if(mobileScreens) {
+      $('.card').each(function () {
+          if (isOnViewport(this) === true) {
+              $(this).addClass('card--state-active');
+          } else {
+            $(this).removeClass('card--state-active');
+          }
+      });
+    }
+  });
 
 
 
@@ -89,68 +144,9 @@ import { categorySelected, menuSelected, mobileScreens, searcher, tabletScreens,
   });
 
 
-
   /**
-   * Change the value of the variables that allow you to filter recipes
+   * Functions
    */
-  //Save the id of menu clicked
-  $('.menu__container a').on('click', function(e) {
-    searcher.value = undefined;
-    menuSelected.value = e.currentTarget.id;
-    changeTitle(title);
-  });
-
-  //Save array of categories selected
-  $('.category__form input').on('click', function(e) {
-    categorySelected.value = $("input:checkbox:checked").map(function(){
-      return $(this).val();
-    }).get();
-  });
-
- //Save input value and change title
-  $('.searcher__input').on('input', function() {
-    searcher.value = $(this).val();
-    changeTitle();
-  });
-  
-
-
-  /**
-   * Logo
-   */
-  $('.svgLogo').css('color', '#FFF');
-
-  if (!tabletScreens) {
-    $('.svgLogo').attr('width', '300');
-    $('.svgLogo').attr('height', '125');
-  }
-
-  $('.svgLogo').on('mouseenter', function() {
-    $('.svgLogo').css('color', '#4F4A45')
-  });
-  $('.svgLogo').on('mouseleave', function() {
-    $(this).css('color', '#FFF')
-  });
-
-
-
-
-
-  /**
-   * Focus card when scroll on small screens
-   */
-  $(window).on('scroll', function () {
-    if(mobileScreens) {
-      $('.card__container').each(function () {
-          if (isOnViewport(this) === true) {
-              $(this).addClass('card--state-active');
-          } else {
-            $(this).removeClass('card--state-active');
-          }
-      });
-    }
-  });
-
   //Detect if an element HTML is on viewport
   function isOnViewport(elem) {
     var docViewTop = $(window).scrollTop();

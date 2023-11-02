@@ -57,21 +57,25 @@
         border-radius: 15px;
     }
 
-    .card__information {
+    &__information {
         position: relative;
         z-index: 3;
         opacity: 0;
         transition: 0.5s;
         transform: translateY(30px);
-    }
-    .card__title {
-        margin: 0;
-        @include text($size: 2.8rem, $weight: 'bold', $color: $color-primary);
-    }
-    .card__category__text {
-        margin-top: 8px;
-        color: $color-white;
-        letter-spacing: 1px;
+
+        &__category {
+            &__text {
+                margin-top: 8px;
+                color: $color-white;
+                letter-spacing: 1px;
+            }
+        }
+    
+        &__title {
+            margin: 0;
+            @include text($size: 2.8rem, $weight: 'bold', $color: $color-primary);
+        }
     }
 
     &:hover {
@@ -80,14 +84,14 @@
         &:before {
             opacity: 1;
         }
-        .card__information {
+        .card__container__information {
             opacity: 1;
             transform: translateY(0);
         }
     }
 }
 
-.card--state-active.card--state-active {
+.card--state-active {
     &:before {
         opacity: 1;
     }

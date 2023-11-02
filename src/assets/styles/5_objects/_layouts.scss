@@ -17,14 +17,9 @@
     @extend %center-container;
     padding: 25px;
 
-    @media (min-width: $tabletWidth) {
+    @media (min-width: $tablet) {
         padding: 25px 50px;
     }
-}
-
-.center-content--padding-0 {
-    @extend %center-container;
-    padding: 0;
 }
 
 
@@ -86,7 +81,7 @@ nav {
         .searcher {
             @extend %center-content-vertical-hortizontal;
 
-            @media (min-width: $tabletWidth) {
+            @media (min-width: $tablet) {
                 left: 75%;
                 transform: translate(-60%, -50%);
             }
@@ -111,7 +106,7 @@ nav {
     grid-template-columns: 1fr 1fr;
     gap: 25px;
 
-    @media (min-width: $tabletWidth) {
+    @media (min-width: $tablet) {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
@@ -129,11 +124,11 @@ nav {
     gap: 5px;
     margin-bottom: 50px;
 
-    @media (min-width: $mobileWidth) {
+    @media (min-width: $mobile) {
         grid-template-columns: 1fr 1fr 1fr;
     }
 
-    @media (min-width: $tabletWidth) {
+    @media (min-width: $tablet) {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
 }
@@ -150,11 +145,11 @@ nav {
     grid-template-columns: 1fr;
     gap: 25px;
 
-    @media (min-width: $mobileWidth) {
+    @media (min-width: $mobile) {
         grid-template-columns: 1fr 1fr;
     }
 
-    @media (min-width: $tabletWidth) {
+    @media (min-width: $tablet) {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
@@ -173,7 +168,7 @@ nav {
 .recipe__container {
     padding: 10px;
 
-    @media (min-width: $tabletWidth) {
+    @media (min-width: $tablet) {
         padding: 15px;
     }
 }
@@ -182,7 +177,7 @@ nav {
     padding: 25px;
     padding-top: 100px;
 
-    @media (min-width: $tabletWidth) {
+    @media (min-width: $tablet) {
        padding: 100px 50px;
     }
 }

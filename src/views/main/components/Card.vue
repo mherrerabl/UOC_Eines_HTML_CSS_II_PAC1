@@ -11,11 +11,11 @@
                         (min-width: 800px) 25vw"
               :alt="recipe.name">
           </picture>
-        <div class="card__information">
-          <div class="card__category">
-            <p class="card__category__text">{{ capitalize(searchCategory(recipe.category)) }}</p>
+        <div class="card__container__information">
+          <div class="card__container__information__category">
+            <p class="card__container__information__category__text">{{ capitalize(searchCategory(recipe.category)) }}</p>
           </div>
-           <h4 class="card__title">{{ recipe.name }}</h4>
+           <h4 class="card__container__information__title">{{ recipe.name }}</h4>
         </div>
       </div>
   </a>
