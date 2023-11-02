@@ -2,7 +2,7 @@
 import { categoriesJson, categorySelected, measuresJson, menuJson, menuSelected, recipesJson, searcher } from "./variables";
 
 //Functions Vue
-import { capitalize } from "vue";
+import { capitalize, createApp } from "vue";
 
 //Compare numbers (id)
 const compareNumbers = (num1, num2) => {
@@ -119,5 +119,5 @@ const searchRecipe = (idParam) => {
     return (recipesJson.filter(({id}) => id === idParam))[0];
 }
 
-export { capitalize, changeRoute, filteredRecipes, reset, searchCategory, searchMeasure, searchMenu, searchRecipe, sortRecipes };
+export { capitalize, changeRoute, createApp, filteredRecipes, reset, searchCategory, searchMeasure, searchMenu, searchRecipe, sortRecipes };
 

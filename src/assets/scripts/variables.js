@@ -1,12 +1,14 @@
-//JSON
-import $ from 'jquery';
-import { ref } from 'vue';
+//Import JSON
 import categoriesJson from '../json/categories.json';
 import measuresJson from '../json/measures.json';
 import menuJson from '../json/menu.json';
 import recipesJson from '../json/recipes.json';
 
-//Functions Vue
+//Import Vue
+import { ref } from 'vue';
+
+//Import jquery
+import $ from 'jquery';
 
 //variables
 const searcher = ref(undefined);

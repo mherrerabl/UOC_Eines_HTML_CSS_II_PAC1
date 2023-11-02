@@ -6,8 +6,7 @@
 // import 'some-node-module';
 // import SomeModule from 'some-node-module';
 
-import $ from 'jquery';
-import { capitalize, createApp } from 'vue';
+//import { capitalize, createApp } from 'vue';
 
 /**
  * Import components
@@ -19,7 +18,13 @@ import RecipesList from './../../views/main/recipes/RecipesList.vue';
 /**
  * Import variables
  */
-import { categorySelected, menuSelected, mobileScreens, searcher, tabletScreens, title } from './variables';
+import { $, categorySelected, menuSelected, mobileScreens, searcher, tabletScreens, title } from './variables';
+
+/**
+ * Import variables
+ */
+import { capitalize, createApp } from './functionsVue';
+
 
 /**
  * Write any other JavaScript below
@@ -30,7 +35,7 @@ import { categorySelected, menuSelected, mobileScreens, searcher, tabletScreens,
   /**
    * Mount Vue components
    */
-  createApp(News).mount('#news__container');
+  createApp(News).mount('#news');
   createApp(RecipesList).mount('#recipes__list');
   createApp(Recipe).mount('#recipe');
 
@@ -39,7 +44,7 @@ import { categorySelected, menuSelected, mobileScreens, searcher, tabletScreens,
   /**
    * Change the value of the variables that allow you to filter recipes
    */
-  //Save the id of menu clicked
+  //Save the id of menu clicked and change the title of Recipes section
   $('.menu__container a').on('click', function(e) {
     searcher.value = undefined;
     menuSelected.value = e.currentTarget.id;
@@ -120,9 +125,9 @@ import { categorySelected, menuSelected, mobileScreens, searcher, tabletScreens,
     if(mobileScreens) {
       $('.card').each(function () {
           if (isOnViewport(this) === true) {
-              $(this).addClass('card--state-active');
+              $(this).addClass('card--state-hover');
           } else {
-            $(this).removeClass('card--state-active');
+            $(this).removeClass('card--state-hover');
           }
       });
     }
