@@ -15,17 +15,6 @@
 
 
 /*-------------------------------*\
-  Logo
-\*-------------------------------*/
-.logo__link {
-    display: block;
-    width: fit-content;
-    margin: 0 auto;
-}
-
-
-
-/*-------------------------------*\
   Cards
 \*-------------------------------*/
 /*--------------------------*\
@@ -109,7 +98,6 @@
 }
 
 
-
 /*--------------------------*\
   Menu
 \*--------------------------*/
@@ -154,23 +142,11 @@
 
 
 /*-------------------------------*\
-  Icons
+  Inputs
 \*-------------------------------*/
-.fa-magnifying-glass {
-    margin-right: 7px;
-    font-size: 0.9em;
-    color: $color-fourth;
-}
-
-.fa-chevron-up {
-    color: $color-white;
-}
-
-
-
-/*-------------------------------*\
+/*--------------------------*\
   Input searcher
-\*-------------------------------*/
+\*--------------------------*/
 .searcher {
     position: relative;
     display: flex;
@@ -229,10 +205,9 @@
 }
 
 
-
-/*-------------------------------*\
+/*--------------------------*\
   Input checkbox
-\*-------------------------------*/
+\*--------------------------*/
 .checkbox {
     &__label {
         position: relative;
@@ -281,6 +256,33 @@
 }
 
 
+
+/*-------------------------------*\
+  Logo
+\*-------------------------------*/
+.logo__link {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+
+
+/*-------------------------------*\
+  Icons
+\*-------------------------------*/
+.fa-magnifying-glass {
+    margin-right: 7px;
+    font-size: 0.9em;
+    color: $color-fourth;
+}
+
+.fa-chevron-up {
+    color: $color-white;
+}
+
+
+
 /*-------------------------------*\
   Float button
 \*-------------------------------*/
@@ -300,6 +302,50 @@
 
     &:hover {
         background-color: $color-third;
+    }
+}
+
+
+
+/*-------------------------------*\
+  Simulate paper
+\*-------------------------------*/
+.paper {
+    margin: 25px auto;
+    background-image: linear-gradient(90deg, $color-white 12px, 0,
+        $color-fourth 15px, 0, $color-transparent 20px, 0, $color-white 100%),
+      radial-gradient(circle closest-side, rgba(255,255,255,0) 88%, $color-white 100%),
+      radial-gradient(circle at 22px 8px, $color-transparent 40%,
+        $color-fourth 40%, $color-fourth 100%);
+    background-repeat: space no-repeat;
+    background-position: center top, center 6px, center 6px;
+    background-size: 32px 8px, 32px 16px, 32px 16px;
+    box-shadow: 4px 4px 0 $color-fourth;
+}
+
+
+
+
+
+/*------------------------------------*\
+  FOOTER
+\*------------------------------------*/
+.footer {
+    margin-top: 50px;
+
+    &__list {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        text-align: center;
+    
+
+        &__element {
+            color: $color-white;
+        }
+
+        &__element:not(:last-child) {
+            margin-bottom: 15px;
+        }
     }
 }
 
@@ -334,50 +380,4 @@
         margin: 0 auto;
         border-radius: 15px;
     }
-}
-
-
-
-
-
-/*------------------------------------*\
-  FOOTER
-\*------------------------------------*/
-.footer {
-    margin-top: 50px;
-
-    &__list {
-        padding-top: 25px;
-        padding-bottom: 25px;
-        text-align: center;
-    
-
-        &__element {
-            color: $color-white;
-        }
-
-        &__element:not(:last-child) {
-            margin-bottom: 15px;
-        }
-    }
-}
-
-
-
-
-
-/*------------------------------------*\
-  SIMULATE SHEET OF PAPER
-\*------------------------------------*/
-.paper {
-    margin: 25px auto;
-    background-image: linear-gradient(90deg, $color-white 12px, 0,
-        $color-fourth 15px, 0, $color-transparent 20px, 0, $color-white 100%),
-      radial-gradient(circle closest-side, rgba(255,255,255,0) 88%, $color-white 100%),
-      radial-gradient(circle at 22px 8px, $color-transparent 40%,
-        $color-fourth 40%, $color-fourth 100%);
-    background-repeat: space no-repeat;
-    background-position: center top, center 6px, center 6px;
-    background-size: 32px 8px, 32px 16px, 32px 16px;
-    box-shadow: 4px 4px 0 $color-fourth;
 }

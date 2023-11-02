@@ -12,7 +12,6 @@ import { capitalize, createApp } from 'vue';
 /**
  * Import components
  */
-import NavPrimary from './../../views/header/NavPrimary.vue';
 import News from './../../views/main/news/News.vue';
 import Recipe from './../../views/main/recipe/Recipe.vue';
 import RecipesList from './../../views/main/recipesList/RecipesList.vue';
@@ -31,7 +30,6 @@ import { categorySelected, menuSelected, mobileScreens, searcher, tabletScreens,
   /**
    * Mount Vue components
    */
-  createApp(NavPrimary).mount('#nav-primary');
   createApp(News).mount('#news__container');
   createApp(RecipesList).mount('#recipes__list');
   createApp(Recipe).mount('#recipe');
@@ -109,8 +107,9 @@ import { categorySelected, menuSelected, mobileScreens, searcher, tabletScreens,
     }).get();
   });
 
- //Save array of categories selected
+ //Save input value and change title
   $('.searcher__input').on('input', function() {
+    searcher.value = $(this).val();
     changeTitle();
   });
   

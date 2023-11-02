@@ -28,7 +28,7 @@ a,
 label,
 i,
 input {
-    @include text;
+    @include text();
 }
 
 a {
