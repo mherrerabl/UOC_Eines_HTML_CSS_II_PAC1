@@ -165,7 +165,7 @@ nav {
 /*------------------------------------*\
   RECIPE LAYOUT
 \*------------------------------------*/
-.recipe__container {
+.recipe {
     padding: 10px;
 
     @media (min-width: $tablet) {
@@ -173,7 +173,7 @@ nav {
     }
 }
 
-.recipe__content {
+.recipe__container {
     padding: 25px;
     padding-top: 100px;
 

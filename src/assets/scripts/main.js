@@ -6,7 +6,6 @@
 // import 'some-node-module';
 // import SomeModule from 'some-node-module';
 
-//import { capitalize, createApp } from 'vue';
 
 /**
  * Import components

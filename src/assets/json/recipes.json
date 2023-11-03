@@ -123,13 +123,40 @@
         "publication_date": "09/01/2023",
         "ingredients":  [
             {
-                "name": "",
-                "quantity": 0,
-                "measure": 1
+                "name": "harina",
+                "quantity": 300,
+                "measure": 9
+            },
+            {
+                "name": "agua",
+                "quantity": 300,
+                "measure": 7
+            },
+            {
+                "name": "sal",
+                "quantity": 10,
+                "measure": 9
+            },
+            {
+                "name": "levadura de panadero seca",
+                "quantity": 5,
+                "measure": 9
+            },
+            {
+                "name": "aceite de girasol",
+                "quantity": 1,
+                "measure": 6
             }
         ],
         "description": [
-            ""
+            "Calentar el agua a 36ºC.",
+            "Mezclar el agua y la harina hasta obtener una masa homogénea sin grumos.", 
+            "Añadir la levadura a la masa y batir.",
+            "Incorporar la sal y mezclar bien para integrarla.",
+            "Dejar reposar la masa tapada durante media hora.",
+            "Calentar el aceite en una sartén a fueo medio.",
+            "Utilizar una boquilla en cruz para incorporar la masa en el aceite en forma de rosca.",
+            "Cuando este dorada, dar la vuelta y cocinar el otro lado."
         ]
     },
     {
@@ -428,13 +455,82 @@
         "publication_date": "09/10/2023",
         "ingredients":  [
             {
-                "name": "",
-                "quantity": 0,
+                "name": "harina",
+                "quantity": 600,
+                "measure": 9
+            },
+            {
+                "name": "aceite de oliva",
+                "quantity": 125,
+                "measure": 7
+            },
+            {
+                "name": "cáscara de una naranja",
+                "quantity": 0.3,
+                "measure": 0
+            },
+            {
+                "name": "zumo de naranja",
+                "quantity": 125,
+                "measure": 7
+            },
+            {
+                "name": "vino de montilla",
+                "quantity": 250,
+                "measure": 7
+            },
+            {
+                "name": "polvo para hornear",
+                "quantity": 8,
+                "measure": 9
+            },
+            {
+                "name": "anís en grano",
+                "quantity": 1,
+                "measure": 5
+            },
+            {
+                "name": "sesámo",
+                "quantity": 1.5,
+                "measure": 3
+            },
+            {
+                "name": "sal",
+                "quantity": 0.5,
+                "measure": 5
+            },
+            {
+                "name": "azúcar",
+                "quantity": 100,
+                "measure": 9
+            },
+            {
+                "name": "miel",
+                "quantity": 1.5,
                 "measure": 1
+            },
+            {
+                "name": "agua",
+                "quantity": 0.5,
+                "measure": 1
+            },
+            {
+                "name": "aceite de girasol",
+                "quantity": 1,
+                "measure": 6
             }
+            
         ],
         "description": [
-            ""
+            "Calentar el aceite de oliva y añadir el anís, el sésamo y la cáscara de naranja.",
+            "Cuando este frita la cáscara se retira. Dejar los demás ingrendientes unos minutos para que fusionarlos con el aceite.",
+            "Machacar en el mortero el sésamo y el anís.",
+            "En un bol incorporar la harina, el aceite de oliva, el zumo de naranja, el vino, la sal y los polvos de hornear. Amasar con las manos hasta obtener una masa elástica.",
+            "Formar unas bolitas con la masa, aplanar con el rodillo y unir dos extremos.",
+            "Incorporar el aceite de girasol en una sartén y calentar a fuego medio.",
+            "Freir los pestiños y retirar en papel absorbente.",
+            "Hacer un almíbar con la miel y el agua.", 
+            "Remojar cada pestiño en el almíbar o pasarlos por azúcar."
         ]
     },
     

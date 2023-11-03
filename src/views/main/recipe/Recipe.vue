@@ -1,6 +1,6 @@
 <template>
-    <div class="recipe__container center-content--padding-25-50" v-if="recipe !== undefined">
-        <div class="recipe__content paper">
+    <div class="recipe center-content--padding-25-50" v-if="recipe !== undefined">
+        <div class="recipe__container paper">
             <h2 class="title--level-secundary blank-space--bottom-25">{{ recipe.name }}</h2>
             <h3 class="title--level-third blank-space--bottom-25">{{ searchMenu(recipe.menu) }}</h3>
             <h4 class="title--level-fourth blank-space--bottom-25">Receta {{ searchCategory(recipe.category) }}</h4>
@@ -46,7 +46,7 @@ export default {
 
         watch(recipeSelected, () => {
             recipe.value = searchRecipe(recipeSelected.value);
-            document.getElementById('recipe').style.visibility = 'visible';
+            $('#recipe').css('visibility', 'visible');
     
             $('html, body').animate({
                 scrollTop:  $( '#recipe' ).offset().top - 100
